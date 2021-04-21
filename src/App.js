@@ -78,9 +78,10 @@ class App extends React.Component {
           <Route path="/search" component={Search} />
           <Route path="/viewbids" component={SearchBids} />
           <Route path="/bid-details" component={BidDetails} />
-          <Redirect from="/" exact to="/home" />
+         
           
           <Route path="/test" component={Test}/>
+          <Redirect from="/" exact to="/home" />
          
            
         </Switch>

@@ -21,7 +21,7 @@ class Login extends Form {
     try {
       const { data } = this.state;
       await auth.login(data.username, data.password);
-      window.location = "/";
+      window.location = "/home";
       toast.success("Successful Login");
     } catch (ex) {
       if (ex.response && ex.respone.status === 400) {
