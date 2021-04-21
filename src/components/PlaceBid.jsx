@@ -29,8 +29,16 @@ const PlaceBid = () => {
     data.append("postedBy", user);
     data.append("status", "unavailable");
 
+    
+
+
     const response = await auth.postBid(data);
-    console.log(response);
+    if (response.status === 201) {
+      toast.success("Bids placed")
+      window.location.href = "/my-bids"
+      
+      ;;
+    }
   };
 
   return (
@@ -115,6 +123,7 @@ const PlaceBid = () => {
             disabled
             onClick={handleSubmit}
             id="btns"
+            
           >
             Submit
           </Button>

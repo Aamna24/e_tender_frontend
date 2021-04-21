@@ -2,6 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import * as auth from "../services/authServices";
 import Button from "@material-ui/core/Button";
+import { toast } from "react-toastify";
 const PublishTender = () => {
   const user = auth.getCurrentUser();
 
@@ -31,7 +32,9 @@ const PublishTender = () => {
 
     const response = await auth.publishTender(data);
     if (response.status === 201) {
-      window.location.href = "/my-tenders";
+      window.location.href = "/my-tenders"
+      
+      toast.success("Tender placed");;
     }
   };
   return (

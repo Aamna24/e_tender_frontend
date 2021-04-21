@@ -24,6 +24,7 @@ import Test from './components/test';
 import MyBids from './components/myBids';
 import SearchBids from './components/bids';
 import BidDetails from './common/bidDetails';
+import MybidDetails from './common/mybidDetails';
 
 
 class App extends React.Component {
