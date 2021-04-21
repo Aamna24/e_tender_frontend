@@ -24,6 +24,7 @@ import Test from './components/test';
 import MyBids from './components/myBids';
 import SearchBids from './components/bids';
 import BidDetails from './common/bidDetails';
+import MybidDetails from './common/mybidDetails';
 
 
 class App extends React.Component {
@@ -78,6 +79,7 @@ class App extends React.Component {
           <Route path="/search" component={Search} />
           <Route path="/viewbids" component={SearchBids} />
           <Route path="/bid-details" component={BidDetails} />
+          <Route path="/mybid-details" component={MybidDetails} />
           <Redirect from="/" exact to="/home" />
           
           <Route path="/test" component={Test}/>
