@@ -43,7 +43,7 @@ const MyBids = () => {
                 <Button
                   id="btns"
                   onClick={(e) => {
-                    window.location.href = "/bid-details/?id=" + post.id;
+                    window.location.href = "/mybid-details/?id=" + post.id;
                   }}
                 >
                   View Details
