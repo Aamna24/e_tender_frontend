@@ -43,12 +43,18 @@ const MyBids = () => {
                 <Button
                   id="btns"
                   onClick={(e) => {
-                    window.location.href = "/details/?id=" + post.id;
+                    window.location.href = "/bid-details/?id=" + post.id;
                   }}
                 >
                   View Details
                 </Button>
-                <Button id="btns">Delete Bid</Button>
+                <Button id="btns"
+                onClick={(e) => {
+                  auth.deleteBid(post.id);
+                  window.location.reload();
+                }}
+                
+                >Delete Bid</Button>
               </div>
             </div>
           );
