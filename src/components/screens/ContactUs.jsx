@@ -37,6 +37,10 @@ class ContactUs extends Form {
   }
 }
 
-export default GoogleApiWrapper({
+/*export default GoogleApiWrapper({
   apiKey: "AIzaSyB__-V7e-byQzDIhT-Zbl0iSg2St6hP8ZA",
+})(ContactUs);*/
+
+export default GoogleApiWrapper({
+  apiKey: process.env.apiKey,
 })(ContactUs);
