@@ -1,14 +1,14 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import * as auth from "../services/authServices";
+import * as auth from "../../services/authServices";
 
 const SearchBids = () => {
   const querystring = window.location.search;
   const URLParams = new URLSearchParams(querystring);
   const id = URLParams.get("id");
   const title = URLParams.get("tender");
+
   const [result, setRes] = React.useState();
-  const [show, setShow] = React.useState(null);
 
   const getData = () => {
     auth
@@ -23,9 +23,15 @@ const SearchBids = () => {
   };
   //getData();
   React.useEffect(getData, []);
-  console.log("res is", result);
-  if (!result || result.length == 0) return <p>No Bids to show</p>;
-  console.log(result);
+  if (!result || result.length === 0)
+    return (
+      <h4
+        className="text-center"
+        style={{ marginTop: "100px", marginBottom: "100px" }}
+      >
+        No Bids to show
+      </h4>
+    );
   return (
     <div className="container " style={{ marginTop: "50px" }}>
       <h5>Showing bids placed on Tender Title: {title}</h5>
@@ -39,10 +45,27 @@ const SearchBids = () => {
 
                   <p class="card-text">Amount: {post.bidding_amount}</p>
 
+                  {post.status === "Approved" && (
+                    <p class="card-text">
+                      <button class="btn btn-success">{post.status}</button>{" "}
+                    </p>
+                  )}
+                  {post.status === "Rejected" && (
+                    <p class="card-text">
+                      <button class="btn btn-danger">{post.status}</button>{" "}
+                    </p>
+                  )}
+                  {post.status === "Under Review" && (
+                    <p class="card-text">
+                      <button class="btn btn-primary ">{post.status}</button>{" "}
+                    </p>
+                  )}
+
                   <Button
                     id="btns"
                     onClick={(e) => {
-                      window.location.href = "/bid-details/?id=" + post.id;
+                      window.location.href =
+                        "/bid-details/" + post.id + "/" + post.tenderId;
                     }}
                   >
                     View Details

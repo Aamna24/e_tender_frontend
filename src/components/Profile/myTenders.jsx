@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import * as auth from "../services/authServices";
+import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
+
 const MyTenders = () => {
   const email = localStorage.getItem("organization");
 
@@ -18,7 +19,7 @@ const MyTenders = () => {
     return tenders;
   };
   //getData();
-  React.useEffect(getData, []);
+  React.useEffect(getData, [tenders]);
   const filtered = tenders.filter((x) => x.organization_name === email);
   return (
     <div className="container">
@@ -30,7 +31,6 @@ const MyTenders = () => {
             <div class="card mb-5">
               <div class="card-body">
                 <h5 class="card-title">{post.organization_name}</h5>
-
                 <p class="card-text">Sector: {post.category}</p>
                 <p class="card-text">Description: {post.description}</p>
                 <p class="card-text">Action Deadline: {post.last_date}</p>
@@ -41,6 +41,7 @@ const MyTenders = () => {
                 <br />
                 <br />
                 <Button
+                  className="mr-3"
                   id="btns"
                   onClick={(e) => {
                     window.location.href = "/details/?id=" + post.id;
@@ -48,23 +49,26 @@ const MyTenders = () => {
                 >
                   View Details
                 </Button>
+
                 <Button
-                  color="danger"
-                  onClick={(e) => {
-                    auth.deleteTender(post.id);
-                    window.location.reload();
-                  }}
-                >
-                  Delete Tender
-                </Button>
-                <Button
+                  className="mr-3"
                   id="btns"
-                  onClick={(e) => {
+                  onClick={() => {
                     window.location.href =
                       "/viewbids/?id=" + post.id + "&tender=" + post.title;
                   }}
                 >
                   View Bids
+                </Button>
+                <Button
+                  className="mr-3"
+                  id="btn-danger"
+                  onClick={() => {
+                    auth.deleteTender(post.id);
+                    window.location.reload();
+                  }}
+                >
+                  Delete Tender
                 </Button>
               </div>
             </div>

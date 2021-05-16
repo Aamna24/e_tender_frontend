@@ -2,22 +2,20 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "@material-ui/core/Button";
 
-import * as auth from "../services/authServices";
+import * as auth from "../../services/authServices";
 import { toast } from "react-toastify";
 toast.configure();
 
-const PlaceBid = () => {
+const PlaceBid = ({ match }) => {
   const user = auth.getCurrentUser();
 
   const [name, setName] = useState();
   const [contact, setContact] = useState();
   const [no_of_days, setDays] = useState();
   const [bidding_amount, setBidding] = useState();
-  const [tenderID, settenderID] = useState();
   const [file, setFile] = useState();
-  const querystring = window.location.search;
-  const URLParams = new URLSearchParams(querystring);
-  const id = URLParams.get("id");
+
+  const id = match.params.id;
   const handleSubmit = async () => {
     var data = new FormData();
     data.append("name", name);
@@ -27,17 +25,12 @@ const PlaceBid = () => {
     data.append("tenderId", id);
     data.append("file_uploaded", file);
     data.append("postedBy", user);
-    data.append("status", "unavailable");
-
-    
-
+    data.append("status", "Under Review");
 
     const response = await auth.postBid(data);
     if (response.status === 201) {
-      toast.success("Bids placed")
-      window.location.href = "/my-bids"
-      
-      ;;
+      toast.success("Bids placed");
+      window.location.href = "/my-bids";
     }
   };
 
@@ -123,7 +116,6 @@ const PlaceBid = () => {
             disabled
             onClick={handleSubmit}
             id="btns"
-            
           >
             Submit
           </Button>

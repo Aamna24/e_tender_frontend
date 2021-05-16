@@ -80,7 +80,7 @@ class Form extends Component {
     );
   }
   renderInput1(name, label, value, type = "text") {
-    const { data, errors } = this.state;
+    const { errors } = this.state;
     return (
       <AutoInput
         type={type}
@@ -94,7 +94,7 @@ class Form extends Component {
     );
   }
   renderFile(name, label, value, type = "file") {
-    const { data, errors } = this.state;
+    const { errors } = this.state;
     return (
       <AutoInput
         type={type}

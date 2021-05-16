@@ -31,6 +31,14 @@ code {
   background-color: #16c79a;
   color: white;
 }
+
+#btn-danger {
+  border-radius: 1rem;
+  padding: 5px 15px 5px 15px;
+  background-color: #e90707;
+  color: white;
+}
+
 #mbtns {
   border-radius: 1rem;
   padding: 20px;
@@ -108,4 +116,11 @@ h6.MuiTypography-h6 {
 }
 h6.MuiTypography-h6 a:hover {
   text-decoration: none;
+}
+
+#vertical-center {
+  background-color: "#16c79a";
+  color: "white";
+  border-radius: "1rem";
+  padding: " 5px 15px 5px 15px";
 }

@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import CategoriesCard from "./CategoriesCards";
-import LatestTenders from "./latestTenders";
+import CategoriesCard from "../CategoriesCards";
+import LatestTenders from "../Tenders/latestTenders";
+
 const HomePage = () => {
   return (
     <div>
-      <div class="jumbotron"></div>
-      <div class="row container">
-        <div class="col-md-6 text-center">
+      <div className="jumbotron"></div>
+      <div className="row container">
+        <div className="col-md-6 text-center">
           <Button
             id="mbtns"
             className="btn btn-lg"
@@ -25,7 +26,7 @@ const HomePage = () => {
             Search For Tenders
           </Button>
         </div>
-        <div class="col-md-6 text-center">
+        <div className="col-md-6 text-center">
           <Button
             id="mbtns"
             className="btn btn-lg"
@@ -45,19 +46,19 @@ const HomePage = () => {
       </div>
       <br />
       <div className="container text-center">
-        <h2>Categories</h2>
+        <h3 style={{ marginTop: "55px" }}>Categories</h3>
         <br />
         <CategoriesCard />
       </div>
       <br />
       <br />
-      <div className="container text-center solid">
-        <h2>Latest Tenders</h2>
+      <div className="container text-center solid ">
+        <h3 style={{ marginTop: "18px" }}>Latest Tenders</h3>
         <LatestTenders />
         <br />
       </div>
       <div className="container text-center">
-        <h2>Our Clients</h2>
+        <h3 style={{ marginTop: "45px" }}>Our Clients</h3>
         <br />
       </div>
     </div>

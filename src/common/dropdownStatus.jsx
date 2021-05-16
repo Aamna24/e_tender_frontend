@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Dropdown = ({ name, label, error, value1, value2, ...rest }) => {
   return (

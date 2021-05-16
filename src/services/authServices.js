@@ -1,8 +1,7 @@
 import http from './httpService';
-import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
-import jwtDecode from 'jwt-decode'
+
 
 const apiPoint = "/api/login/"
 const tokenKey = "token"
@@ -15,39 +14,39 @@ export async function login(username, password) {
 }
 
 export async function getTenders(){
-    const getTender="http://127.0.0.1:8000/api/publish-tender/"
+    const getTender="/api/publish-tender/"
     return http.get(getTender)
 }
 export async function getBids(){
-    return http.get("http://127.0.0.1:8000/api/bid/")
+    return http.get("/api/bid/")
 }
-const apiEndPoint = "/api/publish-tender/"
-/**
- * export async function publishTender(organization_name, title, category, availibility,region,
-    description, contact, opening_date, last_date){
-        return http.post(apiEndPoint, {organization_name, category, title, availibility, region,description,contact,
-        opening_date, last_date})
-    }
- */
+export async function approveBids(id,status){
+    return http.patch("/api/bid/"+id+"/",{status})
+}
+export async function rejectBids(id,status){
+    return http.patch("/api/bid/"+id+"/",{status})
+}
+
+
 export function publishTender(data){
-    return http.post(apiEndPoint,data)
+    return http.post('/api/publish-tender/',data)
 }
 
 export function searchTender(data){
-    const search="http://127.0.0.1:8000/api/publish-tender/?search="+data
+    const search="/api/publish-tender/?search="+data
     return http.get(search)
 }
 
 export function searchBids(data){
-    const search="http://127.0.0.1:8000/api/bid/?search="+data
+    const search="/api/bid/?search="+data
     return http.get(search)
 }
 export function deleteTender(id){
-    const getTender="http://127.0.0.1:8000/api/publish-tender/"+id+"/"
+    const getTender="/api/publish-tender/"+id+"/"
     return http.delete(getTender)
 }
 export function deleteBid(id){
-    const getTender="http://127.0.0.1:8000/api/bid/"+id+"/"
+    const getTender="/api/bid/"+id+"/"
     return http.delete(getTender)
 }
 
@@ -81,6 +80,7 @@ export default{
     deleteTender,
     searchTender,
     getBids,
-    searchBids
+    searchBids,
+    rejectBids
 
 }

@@ -1,10 +1,6 @@
 import GenericServices from "./GenericServices";
 
 class UserServices extends GenericServices {
-  constructor() {
-    super();
-  }
-
   login = (email, password) =>
     new Promise((resolve, reject) => {
       this.post("/api/login/", { email, password }).then((token) => {

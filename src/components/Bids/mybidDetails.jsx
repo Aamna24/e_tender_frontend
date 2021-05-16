@@ -1,13 +1,9 @@
-import React, { Component, useState } from "react";
-import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-import * as auth from "../services/authServices";
+import React, { useState } from "react";
 
-const BidDetails = () => {
-  const querystring = window.location.search;
-  const URLParams = new URLSearchParams(querystring);
-  const id = URLParams.get("id");
-  const id1 = Number(id);
+import * as auth from "../../services/authServices";
+
+const MybidDetails = ({ match }) => {
+  const id1 = Number(match.params.id);
 
   const [details, setDetails] = useState([]);
   const getData = () => {
@@ -22,7 +18,7 @@ const BidDetails = () => {
     return details;
   };
   //getData();
-  React.useEffect(getData, []);
+  React.useEffect(getData, [details]);
 
   if (!details || details.length === 0) return <p>Cannot find any Bids</p>;
 
@@ -59,6 +55,14 @@ const BidDetails = () => {
                 <p>{product.contact}</p>
               </div>
             </div>
+            <div className="row" id="d-content">
+              <div className="col-md-6">
+                <h5 id="d-title">Status</h5>
+              </div>
+              <div className="col-md-6">
+                <p>{product.status}</p>
+              </div>
+            </div>
 
             <div className="row" id="d-content">
               <div className="col-md-6">
@@ -71,14 +75,10 @@ const BidDetails = () => {
                 </a>
               </div>
             </div>
-
-            <Button variant="contained" color="primary">
-              Approve Bid
-            </Button>
           </div>
         ))}
     </div>
   );
 };
 
-export default BidDetails;
+export default MybidDetails;

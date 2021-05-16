@@ -1,7 +1,7 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import * as auth from "../services/authServices";
-import { Link } from "react-router-dom";
+import * as auth from "../../services/authServices";
+
 const LatestTenders = () => {
   const [tenders, setTenders] = useState([]);
 
@@ -14,9 +14,7 @@ const LatestTenders = () => {
       .catch((err) => {
         console.log(err);
       });
-    return tenders;
   };
-  //getData();
   React.useEffect(getData, []);
   const ImageThumb = ({ image }) => {
     return <img src={URL.createObjectURL(image)} alt={image.name} />;
@@ -28,13 +26,13 @@ const LatestTenders = () => {
         .slice(0, 3)
         .map((post) => {
           return (
-            <div class="card mb-5">
-              <div class="card-body">
-                <h5 class="card-title">{post.organization_name}</h5>
+            <div className="card mb-5">
+              <div className="card-body">
+                <h5 className="card-title">{post.organization_name}</h5>
 
-                <p class="card-text">Sector: {post.category}</p>
-                <p class="card-text">Description: {post.description}</p>
-                <p class="card-text">Action Deadline: {post.last_date}</p>
+                <p className="card-text">Sector: {post.category}</p>
+                <p className="card-text">Description: {post.description}</p>
+                <p className="card-text">Action Deadline: {post.last_date}</p>
                 <a href={post.file_uploaded} download="My_File.pdf">
                   {" "}
                   Soft Copy{" "}
@@ -44,7 +42,7 @@ const LatestTenders = () => {
                 <Button
                   id="btns"
                   onClick={(e) => {
-                    window.location.href = "/details/?id=" + post.id;
+                    window.location.href = "/details/" + post.id;
                   }}
                 >
                   View Details
@@ -53,9 +51,9 @@ const LatestTenders = () => {
             </div>
           );
         })}
-      <Button id="btns" href="/tenders">
-        View More
-      </Button>
+      <div className="text-center">
+        <Button href="/tenders">View More</Button>
+      </div>
     </div>
   );
 };

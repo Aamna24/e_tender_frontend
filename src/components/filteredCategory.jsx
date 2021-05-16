@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
-const FilteredCategory = () => {
-  const querystring = window.location.search;
-  const URLParams = new URLSearchParams(querystring);
-  const category = URLParams.get("c");
+
+const FilteredCategory = ({ match }) => {
   const [tenders, setTenders] = useState([]);
 
   const getData = () => {
@@ -19,12 +17,12 @@ const FilteredCategory = () => {
     return tenders;
   };
   //getData();
-  React.useEffect(getData, []);
+  React.useEffect(getData, [tenders]);
 
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
       {tenders
-        .filter((x) => x.category === category)
+        .filter((x) => x.category === match.params.category)
         .map((post) => {
           return (
             <div class="card mb-5">
@@ -52,6 +50,7 @@ const FilteredCategory = () => {
             </div>
           );
         })}
+
       <Button id="btns" href="/tenders">
         View More
       </Button>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { useEffect, useState } from "react";
 
-import posts from "./posts";
-import postLoading from "./postLoading";
+import posts from "../posts";
+import postLoading from "../postLoading";
 
-const Tenders = () => {
+const AllTenders = () => {
   const PostLoading = postLoading(posts);
   const [appState, setAppState] = useState({
     loading: false,
@@ -25,4 +25,4 @@ const Tenders = () => {
     </div>
   );
 };
-export default Tenders;
+export default AllTenders;

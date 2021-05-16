@@ -1,12 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-import * as auth from "../services/authServices";
-const Details = () => {
-  const querystring = window.location.search;
-  const URLParams = new URLSearchParams(querystring);
-  const id = URLParams.get("id");
-  const id1 = Number(id);
+import * as auth from "../../services/authServices";
+
+const TenderDetails = ({ match }) => {
+  const id = Number(match.params.id);
 
   const [details, setDetails] = useState([]);
   const getData = () => {
@@ -21,14 +18,14 @@ const Details = () => {
     return details;
   };
   //getData();
-  React.useEffect(getData, []);
+  React.useEffect(getData, [details]);
 
   if (!details || details.length === 0) return <p>Cannot find any tenders</p>;
 
   return (
     <div className="container" style={{ marginTop: "50px" }}>
       {details
-        .filter((x) => x.id === id1)
+        .filter((x) => x.id === id)
         .map((product, index) => (
           <div>
             <h4 className="text-center mb-3" id="bg-title">
@@ -114,7 +111,7 @@ const Details = () => {
               variant="contained"
               color="primary"
               onClick={(e) => {
-                window.location.href = "/place-bid?id=" + product.id;
+                window.location.href = "/place-bid/" + product.id;
               }}
             >
               Place Bid
@@ -125,4 +122,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default TenderDetails;

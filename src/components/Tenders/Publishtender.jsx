@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import * as auth from "../services/authServices";
+import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
-import { toast } from "react-toastify";
+
 const PublishTender = () => {
   const user = auth.getCurrentUser();
 
-  // const [organization_name, setOrgName] = React.useState();
   const [category, setCategory] = React.useState();
   const [title, setTitle] = React.useState();
   const [availibility, setAvailibility] = React.useState();
@@ -16,6 +15,7 @@ const PublishTender = () => {
   const [opening_date, setOpeningDate] = React.useState();
   const [last_date, setLastDate] = React.useState();
   const [file_uploaded, setFile] = React.useState();
+  const [err, setErr] = useState("");
 
   const handleSubmit = async () => {
     var data = new FormData();
@@ -30,11 +30,16 @@ const PublishTender = () => {
     data.append("last_date", last_date);
     data.append("file_uploaded", file_uploaded);
 
-    const response = await auth.publishTender(data);
-    if (response.status === 201) {
-      window.location.href = "/my-tenders"
-      
-      toast.success("Tender placed");;
+    try {
+      const response = await auth.publishTender(data);
+
+      if (response.status === 201) {
+        window.location.href = "/my-tenders";
+      }
+    } catch (error) {
+      if (error.response.data.contact) {
+        setErr(error.response.data.contact);
+      }
     }
   };
   return (
@@ -45,7 +50,7 @@ const PublishTender = () => {
           <div className="row">
             <input
               type="text"
-              placeholder="enter title"
+              placeholder="Enter Title"
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
@@ -132,6 +137,7 @@ const PublishTender = () => {
             />
           </div>
         </div>
+        {err && <p style={{ color: "red" }}>{err}</p>}
         <div className="form-group">
           <div className="row">
             <input
@@ -181,10 +187,9 @@ const PublishTender = () => {
         {!user && (
           <Button
             variant="contained"
-            color="primary"
+            color="secondary"
             disabled
             onClick={handleSubmit}
-            id="btns"
           >
             Submit
           </Button>
