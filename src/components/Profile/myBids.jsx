@@ -19,7 +19,7 @@ const MyBids = () => {
     return bids;
   };
   //getData();
-  React.useEffect(getData, [bids]);
+  React.useEffect(getData, []);
   const filtered = bids.filter((x) => x.postedBy === email);
   return (
     <div className="container">
@@ -31,9 +31,10 @@ const MyBids = () => {
           return (
             <div class="card mb-5">
               <div class="card-body">
-                <h5 class="card-title">{post.name}</h5>
+                <h5 class="card-title">{post.title}</h5>
 
                 <p class="card-text">Tender ID: {post.tenderId}</p>
+
                 <p class="card-text">Bidding Amount: {post.bidding_amount}</p>
                 {post.status === "Approved" && (
                   <p class="card-text">

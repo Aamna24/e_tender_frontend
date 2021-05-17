@@ -56,8 +56,6 @@ const Posts = (props) => {
 
       if (distance < 0) {
         clearInterval(interval.current);
-
-        console.log("bid closed");
       } else {
         settimerdays(days);
         settimerhours(hours);
@@ -75,9 +73,10 @@ const Posts = (props) => {
             return (
               <div className="card" style={{ marginBottom: "15px" }}>
                 <div class="card-body">
-                  <h5 class="card-title">{post.organization_name}</h5>
+                  <h5 class="card-title">{post.title}</h5>
 
                   <h5 class="card-text">Sector: {post.category}</h5>
+                  <p class="card-text">Posted By: {post.organization_name}</p>
                   <p class="card-text">Description: {post.description}</p>
                   {Starttimer(post.last_date)}
                   <p className="card-text ">
@@ -94,7 +93,7 @@ const Posts = (props) => {
                   <Button
                     id="btns"
                     onClick={(e) => {
-                      window.location.href = "/details/?id=" + post.id;
+                      window.location.href = "/details/" + post.id;
                     }}
                   >
                     View Details

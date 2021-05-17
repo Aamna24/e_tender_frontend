@@ -28,6 +28,7 @@ import MyTenders from './components/Profile/myTenders';
 import PublishTender from './components/Tenders/Publishtender';
 import LatestTenders from './components/Tenders/latestTenders';
 import AllTenders from './components/Tenders/Tenders';
+import MyTenderDetails from './components/Profile/myTenderDetails';
 
 class App extends React.Component {
   constructor(props){
@@ -37,7 +38,6 @@ class App extends React.Component {
 
   componentDidMount(){
     const user = auth.getCurrentUser();
-    console.log(user)
     this.setState({user})
     
   }
@@ -79,11 +79,12 @@ class App extends React.Component {
           <Route path="/publish" component={PublishTender} />
           <Route path="/my-tenders" component={MyTenders} />
 
-          <Route path="/place-bid/:id" component={PlaceBid} />
+          <Route path="/place-bid/:id/:title" component={PlaceBid} />
           <Route path="/my-bids" component={MyBids} />
           <Route path="/viewbids" component={SearchBids} />
           <Route path="/bid-details/:id" component={BidDetails} />
         <Route path="/mybid-details/:id" component={MybidDetails}/>
+        <Route path="/mytenders-details/:id" component={MyTenderDetails}/>
          
           
           <Redirect from="/" exact to="/home" />

@@ -30,7 +30,7 @@ const MyTenders = () => {
           return (
             <div class="card mb-5">
               <div class="card-body">
-                <h5 class="card-title">{post.organization_name}</h5>
+                <h5 class="card-title">{post.title}</h5>
                 <p class="card-text">Sector: {post.category}</p>
                 <p class="card-text">Description: {post.description}</p>
                 <p class="card-text">Action Deadline: {post.last_date}</p>
@@ -44,7 +44,7 @@ const MyTenders = () => {
                   className="mr-3"
                   id="btns"
                   onClick={(e) => {
-                    window.location.href = "/details/?id=" + post.id;
+                    window.location.href = "/mytenders-details/" + post.id;
                   }}
                 >
                   View Details

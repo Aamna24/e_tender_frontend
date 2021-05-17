@@ -22,7 +22,6 @@ const LatestTenders = () => {
   React.useEffect(getData, []);
   const Starttimer = (last_date) => {
     const endtime = new Date(last_date).getTime();
-
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = endtime - now;
@@ -36,15 +35,13 @@ const LatestTenders = () => {
 
       if (distance < 0) {
         clearInterval(interval.current);
-
-        console.log("bid closed");
       } else {
         settimerdays(days);
         settimerhours(hours);
         settimerminutes(minutes);
         settimerseconds(seconds);
       }
-    });
+    }, 1000);
   };
 
   return (
@@ -56,8 +53,8 @@ const LatestTenders = () => {
           return (
             <div className="card mb-5">
               <div className="card-body">
-                <h5 className="card-title">{post.organization_name}</h5>
-
+                <h5 className="card-title">{post.title}</h5>
+                <p className="card-text">Posted By: {post.organization_name}</p>
                 <p className="card-text">Sector: {post.category}</p>
                 <p className="card-text">Description: {post.description}</p>
                 {Starttimer(post.last_date)}

@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 
-const TenderDetails = ({ match }) => {
+const MyTenderDetails = ({ match }) => {
   const id = Number(match.params.id);
-
   const [details, setDetails] = useState([]);
   const getData = () => {
     auth
@@ -106,22 +105,10 @@ const TenderDetails = ({ match }) => {
                 <p>{product.description}</p>
               </div>
             </div>
-            {!(auth.getCurrentUser() === product.organization_name) && (
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={(e) => {
-                  window.location.href =
-                    "/place-bid/" + product.id + "/" + product.title;
-                }}
-              >
-                Place Bid
-              </Button>
-            )}
           </div>
         ))}
     </div>
   );
 };
 
-export default TenderDetails;
+export default MyTenderDetails;

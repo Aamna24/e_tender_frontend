@@ -16,6 +16,7 @@ const PlaceBid = ({ match }) => {
   const [file, setFile] = useState();
 
   const id = match.params.id;
+  const title = match.params.title;
   const handleSubmit = async () => {
     var data = new FormData();
     data.append("name", name);
@@ -23,6 +24,7 @@ const PlaceBid = ({ match }) => {
     data.append("bidding_amount", bidding_amount);
     data.append("contact", contact);
     data.append("tenderId", id);
+    data.append("title", title);
     data.append("file_uploaded", file);
     data.append("postedBy", user);
     data.append("status", "Under Review");

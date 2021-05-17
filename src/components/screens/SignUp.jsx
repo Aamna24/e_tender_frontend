@@ -14,16 +14,22 @@ export default function Register() {
   const [emailErr, setEmailError] = useState("");
   const [contactErr, setContErr] = useState();
   const [cnicError, setError] = useState();
-  const [sub, setSub] = useState();
+  const [sub, setSub] = useState(false);
+  const [ntnErr, setntnError] = useState("");
+  const [AddErr, setAddErr] = useState("");
 
   const validateCNIC = (value) => {
     var cnic_no = value;
     var cnic_no_regex = /^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/;
 
     if (cnic_no_regex.test(cnic_no)) {
+      setError("");
     } else {
       setError("Please enter cnic in correct format");
-      setSub(false);
+      setSub(true);
+    }
+    if (address === "") {
+      setAddErr("This field is required");
     }
   };
 
@@ -88,6 +94,8 @@ export default function Register() {
             </div>
             <span>
               {cnicError && <p style={{ color: "red" }}>{cnicError}</p>}
+
+              {ntnErr && <p style={{ color: "red" }}>{ntnErr}</p>}
             </span>
             <div className="form-group">
               <label htmlFor="contact">Contact No</label>
@@ -113,6 +121,7 @@ export default function Register() {
                 }}
               />
             </div>
+            <span>{AddErr && <p style={{ color: "red" }}>{AddErr}</p>}</span>
 
             <Button
               id="btns"
@@ -129,24 +138,54 @@ export default function Register() {
                         contact,
                         address
                       )
-                      .then((data) => {
-                        console.log(data);
-                        toast.success("Successfuly registered", {
-                          position: toast.POSITION.TOP_CENTER,
-                        });
-                        window.location.href = "/login";
-                      })
+
                       .catch((err) => {
                         if (err.response.data.email) {
                           setEmailError(err.response.data.email);
+                        } else {
+                          setEmailError("");
                         }
                         if (err.response.data.contact) {
                           setContErr(err.response.data.contact);
+                        } else {
+                          setContErr("");
+                        }
+                        if (err.response.data.ntn) {
+                          setntnError(err.response.data.ntn);
+                        } else {
+                          setntnError("");
                         }
                       });
-                  {
-                    !sub && toast.error("Unable to submit");
-                  }
+                }
+                {
+                  !sub &&
+                    userServices
+                      .register(
+                        organization_name,
+                        password,
+                        email,
+                        ntn,
+                        contact,
+                        address
+                      )
+
+                      .catch((err) => {
+                        if (err.response.data.email) {
+                          setEmailError(err.response.data.email);
+                        } else {
+                          setEmailError("");
+                        }
+                        if (err.response.data.ntn) {
+                          setntnError(err.response.data.ntn);
+                        } else {
+                          setntnError("");
+                        }
+                        if (err.response.data.contact) {
+                          setContErr(err.response.data.contact);
+                        } else {
+                          setContErr("");
+                        }
+                      });
                 }
               }}
             >

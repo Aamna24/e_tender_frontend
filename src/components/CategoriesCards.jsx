@@ -27,7 +27,7 @@ const Categoriescards = () => {
         </div>
 
         <div className="col-md-4">
-          <a className="stretched-link" href="/category/construction">
+          <a className="stretched-link" href="/category/Construction">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
