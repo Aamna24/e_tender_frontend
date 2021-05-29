@@ -29,12 +29,16 @@ const PublishTender = () => {
     data.append("opening_date", opening_date);
     data.append("last_date", last_date);
     data.append("file_uploaded", file_uploaded);
+    data.append("email", localStorage.getItem("email"));
+    data.append("assigned_to", "null");
 
     try {
       const response = await auth.publishTender(data);
 
       if (response.status === 201) {
         window.location.href = "/my-tenders";
+      } else {
+        setErr(response.data);
       }
     } catch (error) {
       if (error.response.data.contact) {

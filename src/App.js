@@ -29,6 +29,9 @@ import PublishTender from './components/Tenders/Publishtender';
 import LatestTenders from './components/Tenders/latestTenders';
 import AllTenders from './components/Tenders/Tenders';
 import MyTenderDetails from './components/Profile/myTenderDetails';
+import ArchivesTenders from './components/Tenders/Archives';
+import Test from './components/test';
+import ArchiveTenders from './components/Profile/ArchiveTenders';
 
 class App extends React.Component {
   constructor(props){
@@ -39,6 +42,7 @@ class App extends React.Component {
   componentDidMount(){
     const user = auth.getCurrentUser();
     this.setState({user})
+    console.log(user)
     
   }
 
@@ -67,11 +71,15 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <Route path="/register" component={SignUp} />
           <Route path="/terms" component={Terms} />
-          <Route path="/tenders" component={AllTenders} />
+         {/* <Route path="/tenders" component={AllTenders} />*/}
+         <Route path="/tenders" component={Test}/>
           <Route path="/home" component={HomePage} />
           <Route path="/logout" component={Logout} />
           <Route path="/category/:category" component={FilteredCategory} />
           <Route path="/search" component={Search} />
+          {/*<Route path="/archive" component={ArchivesTenders} />*/}
+          <Route path="/archive" component={ArchiveTenders} />
+          <Route path="/test" component={Test} />
 
 
           <Route path="/details/:id" component={TenderDetails} />
@@ -82,7 +90,7 @@ class App extends React.Component {
           <Route path="/place-bid/:id/:title" component={PlaceBid} />
           <Route path="/my-bids" component={MyBids} />
           <Route path="/viewbids" component={SearchBids} />
-          <Route path="/bid-details/:id" component={BidDetails} />
+          <Route path="/bid-details/:id/:tenderId" component={BidDetails} />
         <Route path="/mybid-details/:id" component={MybidDetails}/>
         <Route path="/mytenders-details/:id" component={MyTenderDetails}/>
          

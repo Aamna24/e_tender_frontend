@@ -10,6 +10,7 @@ export async function login(username, password) {
     const {data: jwt} = await http.post(apiPoint, { username, password });
     localStorage.setItem(tokenKey, jwt.token);
     localStorage.setItem("organization", jwt.organization);
+    localStorage.setItem('email',jwt.email)
     
 }
 
@@ -17,6 +18,12 @@ export async function getTenders(){
     const getTender="/api/publish-tender/"
     return http.get(getTender)
 }
+
+export async function getTendersList(id){
+    const getTender="/api/publish-tender/"+id
+    return http.get(getTender)
+}
+
 export async function getBids(){
     return http.get("/api/bid/")
 }
@@ -25,6 +32,9 @@ export async function approveBids(id,status){
 }
 export async function rejectBids(id,status){
     return http.patch("/api/bid/"+id+"/",{status})
+}
+export async function updateTender(id,assigned_to){
+    return http.patch("/api/publish-tender/"+id+"/",{assigned_to})
 }
 
 
@@ -81,6 +91,7 @@ export default{
     searchTender,
     getBids,
     searchBids,
-    rejectBids
+    rejectBids,
+    getTendersList
 
 }

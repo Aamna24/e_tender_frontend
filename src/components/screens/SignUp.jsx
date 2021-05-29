@@ -10,13 +10,14 @@ export default function Register() {
   const [password, setPassword] = useState();
   const [ntn, setNTN] = useState(0);
   const [contact, setContact] = useState();
-  const [address, setAddress] = useState();
+  const [address, setAddress] = useState("");
   const [emailErr, setEmailError] = useState("");
   const [contactErr, setContErr] = useState();
   const [cnicError, setError] = useState();
   const [sub, setSub] = useState(false);
   const [ntnErr, setntnError] = useState("");
   const [AddErr, setAddErr] = useState("");
+  const [orgErr, setOrgError] = useState();
 
   const validateCNIC = (value) => {
     var cnic_no = value;
@@ -24,12 +25,16 @@ export default function Register() {
 
     if (cnic_no_regex.test(cnic_no)) {
       setError("");
+    } else if (ntn === 0) {
+      setError("This field is required");
     } else {
-      setError("Please enter cnic in correct format");
+      setError("Please enter ntn in correct format");
       setSub(true);
     }
     if (address === "") {
       setAddErr("This field is required");
+    } else {
+      setAddErr("");
     }
   };
 
@@ -54,6 +59,8 @@ export default function Register() {
                 }}
               />
             </div>
+            {orgErr && <p style={{ color: "red" }}>{orgErr}</p>}
+
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -81,7 +88,7 @@ export default function Register() {
               {emailErr && <p style={{ color: "red" }}>{emailErr}</p>}
             </span>
             <div className="form-group">
-              <label htmlFor="ntn">CNIC</label>
+              <label htmlFor="ntn">NTN</label>
               <input
                 id="ntn"
                 type="text"
@@ -138,21 +145,19 @@ export default function Register() {
                         contact,
                         address
                       )
+                      .then((window.location.href = "/login"))
 
                       .catch((err) => {
-                        if (err.response.data.email) {
-                          setEmailError(err.response.data.email);
-                        } else {
+                        if (!err.response.data.email) {
                           setEmailError("");
                         }
-                        if (err.response.data.contact) {
-                          setContErr(err.response.data.contact);
-                        } else {
+                        if (!err.response.data.organization_name) {
+                          setOrgError("");
+                        }
+                        if (!err.response.data.contact) {
                           setContErr("");
                         }
-                        if (err.response.data.ntn) {
-                          setntnError(err.response.data.ntn);
-                        } else {
+                        if (!err.response.data.ntn) {
                           setntnError("");
                         }
                       });
@@ -168,12 +173,21 @@ export default function Register() {
                         contact,
                         address
                       )
+                      .then((data) => {
+                        //console.log("data", data);
+                        window.location.href = "/login";
+                      })
 
                       .catch((err) => {
                         if (err.response.data.email) {
                           setEmailError(err.response.data.email);
                         } else {
                           setEmailError("");
+                        }
+                        if (err.response.data.organization_name) {
+                          setOrgError(err.response.data.organization_name);
+                        } else {
+                          setOrgError("");
                         }
                         if (err.response.data.ntn) {
                           setntnError(err.response.data.ntn);

@@ -23,7 +23,6 @@ class Login extends Form {
     try {
       const { data } = this.state;
       await auth.login(data.username, data.password);
-
       window.location = "/home";
     } catch (ex) {
       if (ex.response !== 200) {

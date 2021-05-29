@@ -19,7 +19,7 @@ const MyTenders = () => {
     return tenders;
   };
   //getData();
-  React.useEffect(getData, [tenders]);
+  React.useEffect(getData, []);
   const filtered = tenders.filter((x) => x.organization_name === email);
   return (
     <div className="container">

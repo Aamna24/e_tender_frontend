@@ -4,7 +4,7 @@ import * as auth from "../../services/authServices";
 import Countdown from "react-countdown";
 import moment from "moment";
 
-const LatestTenders = () => {
+const ArchivesTenders = () => {
   const [tenders, setTenders] = useState([]);
 
   const getData = () => {
@@ -19,7 +19,7 @@ const LatestTenders = () => {
   };
   React.useEffect(getData, []);
   const filter = tenders.filter(
-    (x) => x.last_date > moment().format().split("T")[0]
+    (x) => x.last_date < moment().format().split("T")[0]
   );
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
@@ -37,7 +37,7 @@ const LatestTenders = () => {
 
                 <p className="card-text ">
                   {" "}
-                  Bidding ends in: <Countdown date={post.last_date} />
+                  Tender Assigned To: {post.assigned_to}
                 </p>
                 <a href={post.file_uploaded} download="My_File.pdf">
                   {" "}
@@ -64,4 +64,4 @@ const LatestTenders = () => {
   );
 };
 
-export default LatestTenders;
+export default ArchivesTenders;

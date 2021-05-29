@@ -22,6 +22,7 @@ const BidDetails = ({ match }) => {
   React.useEffect(getData, []);
 
   if (!details || details.length === 0) return <p>Cannot find any Bids</p>;
+  const organization = details.filter((x) => x.id === id1)[0].name;
 
   const RejectBid = async (tenderId) => {
     const remainingBids = await auth.getBids();
@@ -32,6 +33,7 @@ const BidDetails = ({ match }) => {
       const id = filterBids[i].id;
       await auth.rejectBids(id, "Rejected");
     }
+    await auth.updateTender(match.params.tenderId, organization);
   };
 
   const approveBid = async (id, tenderId) => {
