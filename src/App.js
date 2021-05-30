@@ -42,13 +42,12 @@ class App extends React.Component {
   componentDidMount(){
     const user = auth.getCurrentUser();
     this.setState({user})
-    console.log(user)
     
   }
 
   callAPI(){
-    fetch("http://127.0.0.1:8000/api/")
-    .then(res=> res.text())
+    fetch(process.env.REACT_APP_API_URL+"/api/")
+    .then(console.log("app connected"))
     .then(res=> this.setState({apiResponse: res}));
   }
 

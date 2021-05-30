@@ -12,7 +12,7 @@ const AllTenders = () => {
 
   useEffect(() => {
     setAppState({ loading: true });
-    const apiURL = "http://127.0.0.1:8000/api/publish-tender/";
+    const apiURL = "https://etender-backend.herokuapp.com/api/publish-tender/";
     fetch(apiURL)
       .then((data) => data.json())
       .then((posts) => {

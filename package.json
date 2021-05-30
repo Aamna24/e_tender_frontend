@@ -11,6 +11,8 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "google-maps-react": "^2.0.6",
+    "joi-browser": "^13.4.0",
+    "mdbreact": "^5.0.2",
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
@@ -47,5 +49,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

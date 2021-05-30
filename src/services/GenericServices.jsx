@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "http://127.0.0.1:8000";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 class GenericService {
   get = (url) =>
