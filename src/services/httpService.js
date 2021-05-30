@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 toast.configure();
 
-axios.defaults.baseURL = "http://127.0.0.1:8000/api/"
+axios.defaults.baseURL = process.env.REACT_APP_API_URL
 
 axios.interceptors.response.use(null, error => {
     const expectedError =
