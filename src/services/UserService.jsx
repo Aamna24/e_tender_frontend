@@ -4,7 +4,7 @@ class UserServices extends GenericServices {
  
 
   register = (organization_name, password, email, ntn, contact, address) =>
-    this.post("/api/profile/", {
+    this.post("/api/register/", {
       organization_name,
       password,
       email,

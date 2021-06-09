@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
+import * as auth from "../services/authServices";
 import Button from "@material-ui/core/Button";
 
 const FilteredCategory = ({ match }) => {
   const [tenders, setTenders] = useState([]);
 
   const getData = () => {
-    axios
-      .get("http://127.0.0.1:8000/api/publish-tender/")
+    auth.getTenders()
       .then((res) => {
         setTenders(res.data);
       })
@@ -17,8 +16,9 @@ const FilteredCategory = ({ match }) => {
     return tenders;
   };
   //getData();
-  React.useEffect(getData, [tenders]);
+  React.useEffect(getData, []);
 
+  
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
       {tenders

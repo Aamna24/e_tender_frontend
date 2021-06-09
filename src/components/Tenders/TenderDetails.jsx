@@ -18,10 +18,26 @@ const TenderDetails = ({ match }) => {
     return details;
   };
   //getData();
-  React.useEffect(getData, [details]);
+  React.useEffect(getData, []);
+
+  const [bids, setBids] = useState([]);
+  const getBidsData = () => {
+    auth
+      .getBids()
+      .then((res) => {
+        setBids(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    return bids;
+  };
+  //getData();
+  React.useEffect(getBidsData, []);
 
   if (!details || details.length === 0) return <p>Cannot find any tenders</p>;
-
+  if(!bids || bids.length===0) console.log('no bids')
+  const totalbids = bids.filter(x=>x.tenderId===id && x.postedBy===localStorage.getItem('organization') )
   return (
     <div className="container" style={{ marginTop: "50px" }}>
       {details
@@ -106,7 +122,7 @@ const TenderDetails = ({ match }) => {
                 <p>{product.description}</p>
               </div>
             </div>
-            {!(auth.getCurrentUser() === product.organization_name) && (
+            {!(auth.getCurrentUser() === product.organization_name) && totalbids.length===0 && (
               <Button
                 variant="contained"
                 color="primary"
@@ -118,6 +134,11 @@ const TenderDetails = ({ match }) => {
                 Place Bid
               </Button>
             )}
+          { totalbids.length!=0 && (
+            <p> Bid Already placed</p>
+          )
+          }
+           
           </div>
         ))}
     </div>
