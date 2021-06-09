@@ -124,3 +124,9 @@ h6.MuiTypography-h6 a:hover {
   border-radius: "1rem";
   padding: " 5px 15px 5px 15px";
 }
+#root > div.container > div > svg{
+  fill: green;
+  width: 3em;
+  height: 5em
+
+}

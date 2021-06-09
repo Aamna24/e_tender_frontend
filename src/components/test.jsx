@@ -13,7 +13,7 @@ export default class Test extends Component {
     this.state = {
       offset: 0,
       data: [],
-      perPage: 10,
+      perPage: 1,
       currentPage: 0,
     };
     this.handlePageClick = this.handlePageClick.bind(this);
@@ -105,7 +105,7 @@ export default class Test extends Component {
           nextLabel={"next"}
           breakLabel={"..."}
           breakClassName={"break-me"}
-          pageCount={this.state.pageCount}
+          pageCount={this.state.pageCount-1}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
           onPageChange={this.handlePageClick}

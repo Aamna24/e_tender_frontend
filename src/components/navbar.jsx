@@ -119,13 +119,15 @@ export default function NavBar({ user }) {
                 My Bids
               </Link>
             </div>
+            
           </div>
+          
           <hr className="solid"></hr>
 
           <div className="row">
             <div className="col-md-6">
               <div className="text-center">
-                <Link to="/">Manage Account</Link>
+                <Link to="/edit-profile">Manage Account</Link>
               </div>
             </div>
             <div className="col-md-6">

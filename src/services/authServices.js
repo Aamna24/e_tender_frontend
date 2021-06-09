@@ -6,13 +6,23 @@ import 'react-toastify/dist/ReactToastify.css'
 const apiPoint = "/api/login/"
 const tokenKey = "token"
 
-export async function login(username, password) {
-    const {data: jwt} = await http.post(apiPoint, { username, password });
-    localStorage.setItem(tokenKey, jwt.token);
-    localStorage.setItem("organization", jwt.organization);
+export async function login(email, password) {
+    const {data: jwt} = await http.post(apiPoint, { email, password });
+    localStorage.setItem(tokenKey, jwt.tokens);
+    localStorage.setItem("organization", jwt.organization_name);
     localStorage.setItem('email',jwt.email)
     
 }
+export async function getUsers(){
+    const getUser="/api/profile/"
+    return http.get(getUser)
+}
+
+export async function updateUser(id, organization_name,email,ntn,address,contact){
+    const user="/api/profile/"+id+"/"
+    return http.patch(user,{organization_name,email,ntn,address,contact})
+}
+
 
 export async function getTenders(){
     const getTender="/api/publish-tender/"
@@ -70,6 +80,12 @@ export function logout(){
     localStorage.removeItem("organization");
 }
 
+export function verifyEmail(token){
+    return http.get('/api/email-verify/?token='+token)
+}
+
+
+
 export function getCurrentUser(){
     try {
         const jwt = localStorage.getItem(tokenKey);
@@ -92,6 +108,8 @@ export default{
     getBids,
     searchBids,
     rejectBids,
-    getTendersList
+    getTendersList,
+    updateUser,
+    verifyEmail
 
 }

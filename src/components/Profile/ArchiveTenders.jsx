@@ -1,31 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
 
 const ArchiveTenders = () => {
-  const email = localStorage.getItem("organization");
+  const organization_name = localStorage.getItem("organization");
 
   const [bids, setBids] = useState([]);
   const [farray, setArray] = useState([]);
-
-  const getData = () => {
-    auth
+ 
+  useEffect(() => {
+    async function fetchData() {
+      
+      const response = await  auth
       .getBids()
       .then((res) => {
         setBids(res.data);
       })
       .catch((err) => {
         console.log(err);
-      });
-    return bids;
-  };
-  //getData();
-  React.useEffect(getData, []);
-  const filtered = bids.filter((x) => x.postedBy === email);
-
+      });;
+      
+    }
+    fetchData();
+  }, []);
+  const filtered = bids.filter((x) => x.postedBy === organization_name);
+  
   const getTenderList = async () => {
-    let array = filtered.map((e) => e.tenderId);
-    console.log(array);
+
+   let array = filtered.map((e) => e.tenderId);
     fetch("http://127.0.0.1:8000/api/publish-tender/").then((response) => {
       response.json().then((listing) => {
         let array2 = listing.filter((e) => array.includes(e.id));
@@ -35,7 +37,6 @@ const ArchiveTenders = () => {
   };
 
   React.useEffect(getTenderList, []);
-
   return (
     <div className="container">
       <h4 className="text-center mb-5 mt-3">Archive Tenders</h4>

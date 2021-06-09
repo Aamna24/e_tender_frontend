@@ -145,7 +145,7 @@ export default function Register() {
                         contact,
                         address
                       )
-                      .then((window.location.href = "/login"))
+                      .then((window.location.href = "/msg"))
 
                       .catch((err) => {
                         if (!err.response.data.email) {
@@ -175,7 +175,7 @@ export default function Register() {
                       )
                       .then((data) => {
                         //console.log("data", data);
-                        window.location.href = "/login";
+                        window.location.href = "/msg";
                       })
 
                       .catch((err) => {

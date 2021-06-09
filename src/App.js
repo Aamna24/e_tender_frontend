@@ -32,6 +32,9 @@ import MyTenderDetails from './components/Profile/myTenderDetails';
 import ArchivesTenders from './components/Tenders/Archives';
 import Test from './components/test';
 import ArchiveTenders from './components/Profile/ArchiveTenders';
+import Editprofile from './components/Profile/Editprofile';
+import EmailVerify from './components/Profile/EmailVerify';
+import Msg from './components/Msg';
 
 class App extends React.Component {
   constructor(props){
@@ -85,6 +88,7 @@ class App extends React.Component {
           <Route path="/latest" component={LatestTenders} />
           <Route path="/publish" component={PublishTender} />
           <Route path="/my-tenders" component={MyTenders} />
+          <Route path="/edit-profile" component={Editprofile} />
 
           <Route path="/place-bid/:id/:title" component={PlaceBid} />
           <Route path="/my-bids" component={MyBids} />
@@ -92,6 +96,8 @@ class App extends React.Component {
           <Route path="/bid-details/:id/:tenderId" component={BidDetails} />
         <Route path="/mybid-details/:id" component={MybidDetails}/>
         <Route path="/mytenders-details/:id" component={MyTenderDetails}/>
+        <Route path="/email-verify" component={EmailVerify}/>
+        <Route path="/msg" component={Msg}/>
          
           
           <Redirect from="/" exact to="/home" />
