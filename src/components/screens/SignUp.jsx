@@ -145,7 +145,7 @@ export default function Register() {
                         contact,
                         address
                       )
-                      .then((window.location.href = "/msg"))
+                      .then()
 
                       .catch((err) => {
                         if (!err.response.data.email) {

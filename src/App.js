@@ -35,6 +35,9 @@ import ArchiveTenders from './components/Profile/ArchiveTenders';
 import Editprofile from './components/Profile/Editprofile';
 import EmailVerify from './components/Profile/EmailVerify';
 import Msg from './components/Msg';
+import ResetPasswordEmail from './components/screens/ResetPasswordEmail';
+import ResetPassword from './components/screens/ResetPassword';
+
 
 class App extends React.Component {
   constructor(props){
@@ -98,6 +101,8 @@ class App extends React.Component {
         <Route path="/mytenders-details/:id" component={MyTenderDetails}/>
         <Route path="/email-verify" component={EmailVerify}/>
         <Route path="/msg" component={Msg}/>
+        <Route path="/request-reset-email" component={ResetPasswordEmail}/>
+        <Route path="/password-reset/:uidb64/:token/" component={ResetPassword}/>
          
           
           <Redirect from="/" exact to="/home" />

@@ -84,6 +84,16 @@ export function verifyEmail(token){
     return http.get('/api/email-verify/?token='+token)
 }
 
+export function RequestResetEmail(email){
+    return http.post('/api/request-reset-email/',{email})
+}
+export function  PasswordTokenCheckAPI(uidb64,token){
+    return http.get('/api/password-reset/'+uidb64+"/"+token+"/")
+}
+
+export function  ResetPassword(uidb64,token,password){
+    return http.patch('/api/password-reset-complete/'+uidb64+"/"+token+"/",{uidb64,token,password})
+}
 
 
 export function getCurrentUser(){
@@ -110,6 +120,8 @@ export default{
     rejectBids,
     getTendersList,
     updateUser,
-    verifyEmail
+    verifyEmail,
+    RequestResetEmail,
+    PasswordTokenCheckAPI
 
 }
