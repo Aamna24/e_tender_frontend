@@ -14,7 +14,7 @@ export default class Test extends Component {
       offset: 0,
       data: [],
       perPage: 1,
-      currentPage: 0,
+      currentPage: 1,
     };
     this.handlePageClick = this.handlePageClick.bind(this);
   }

@@ -15,7 +15,7 @@ class Login extends Form {
   };
 
   schema = {
-    username: Joi.string().required().label("Username"),
+    username: Joi.string().required().label("Email"),
     password: Joi.string().required().label("Password"),
   };
 
@@ -44,13 +44,16 @@ class Login extends Form {
             </p>
           )}
           <form onSubmit={this.handleSubmit} className="ml-5">
-            {this.renderInput("username", "Username")}
+            {this.renderInput("username", "Email")}
             {this.renderInput("password", "Password", "password")}
             {this.renderButton("Login")}
           </form>
         </div>
         <p className="container mx-auto text-center">
           Don't have an account?<Link to="/register">Sign Up</Link>
+        </p>
+        <p className="container mx-auto text-center">
+          <Link to="/request-reset-email">Forgot Password?</Link>
         </p>
       </>
     );
