@@ -17,6 +17,7 @@ const PlaceBid = ({ match }) => {
 
   const id = match.params.id;
   const title = match.params.title;
+
   const handleSubmit = async () => {
     var data = new FormData();
     data.append("name", name);
@@ -27,6 +28,7 @@ const PlaceBid = ({ match }) => {
     data.append("title", title);
     data.append("file_uploaded", file);
     data.append("postedBy", user);
+    data.append("email", localStorage.getItem('email'))
     data.append("status", "Under Review");
 
     const response = await auth.postBid(data);

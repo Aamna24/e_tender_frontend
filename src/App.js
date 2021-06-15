@@ -37,6 +37,8 @@ import EmailVerify from './components/Profile/EmailVerify';
 import Msg from './components/Msg';
 import ResetPasswordEmail from './components/screens/ResetPasswordEmail';
 import ResetPassword from './components/screens/ResetPassword';
+import SignUptest from './components/SignUptest';
+import AdminHome from './Admin/adminHome';
 
 
 class App extends React.Component {
@@ -74,7 +76,7 @@ class App extends React.Component {
           <Route path="/aboutus" component={AboutUs} />
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/login" component={Login} />
-          <Route path="/register" component={SignUp} />
+          <Route path="/register" component={SignUptest} />
           <Route path="/terms" component={Terms} />
          {/* <Route path="/tenders" component={AllTenders} />*/}
          <Route path="/tenders" component={Test}/>
@@ -103,7 +105,10 @@ class App extends React.Component {
         <Route path="/msg" component={Msg}/>
         <Route path="/request-reset-email" component={ResetPasswordEmail}/>
         <Route path="/password-reset/:uidb64/:token/" component={ResetPassword}/>
-         
+        <Route path="/sign" component={SignUptest}/>
+
+        <Route path="/admin" component={AdminHome}/>
+
           
           <Redirect from="/" exact to="/home" />
          

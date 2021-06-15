@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <MDBFooter
       className="font-small pt-4 mt-4 "
-      style={{ backgroundColor: "#007965" }}
+      style={{ backgroundColor: "#00164c" }}
     >
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
@@ -83,7 +83,7 @@ const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.mdbootstrap.com"> etender.com </a>
+          <a href="https://etenders.herokuapp.com"> etender.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>

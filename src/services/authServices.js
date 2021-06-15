@@ -13,6 +13,10 @@ export async function login(email, password) {
     localStorage.setItem('email',jwt.email)
     
 }
+
+export async function registerUser(values){
+    return http.post("/api/register/",{values})
+}
 export async function getUsers(){
     const getUser="/api/profile/"
     return http.get(getUser)
@@ -122,6 +126,7 @@ export default{
     updateUser,
     verifyEmail,
     RequestResetEmail,
-    PasswordTokenCheckAPI
+    PasswordTokenCheckAPI,
+    registerUser
 
 }

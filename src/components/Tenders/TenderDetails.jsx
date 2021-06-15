@@ -121,6 +121,10 @@ const TenderDetails = ({ match }) => {
               <div className="col-md-6">
                 <p>{product.description}</p>
               </div>
+              <a href={product.file_uploaded} download="My_File.pdf">
+                  {" "}
+                  Soft Copy{" "}
+                </a>
             </div>
             {!(auth.getCurrentUser() === product.organization_name) && totalbids.length===0 && (
               <Button

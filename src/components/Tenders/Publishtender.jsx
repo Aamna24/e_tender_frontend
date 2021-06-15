@@ -28,7 +28,7 @@ const PublishTender = () => {
     data.append("region", region);
     data.append("description", description);
     data.append("contact", contact);
-    data.append("opening_date", moment().format('LL'));
+    data.append("opening_date", moment().format('YYYY-MM-DD'));
     data.append("last_date", last_date);
     data.append("file_uploaded", file_uploaded);
     data.append("email", localStorage.getItem("email"));
@@ -46,9 +46,11 @@ const PublishTender = () => {
       if (error.response.data.contact) {
         setErr(error.response.data.contact);
       }
+      console.log("last date is",moment().format('YYYY-MM-DD'))
     }
   };
   const validateDate=(e)=>{
+    setLastDate(e.target.value)
       const selected = new Date(e.target.value)
       const today = new Date(moment().format('LL'))
        if(selected < today  ){
@@ -57,6 +59,7 @@ const PublishTender = () => {
        }
        else{
          setDateErr(false)
+         
        }
       
     
@@ -69,6 +72,7 @@ const PublishTender = () => {
           <div className="row">
             <input
               type="text"
+              requried
               placeholder="Enter Title"
               onChange={(e) => {
                 setTitle(e.target.value);
@@ -81,6 +85,7 @@ const PublishTender = () => {
           <div className="row">
             <select
               type="text"
+              required
               placeholder="choose your category"
               onChange={(e) => {
                 setCategory(e.target.value);
@@ -118,6 +123,7 @@ const PublishTender = () => {
             <select
               type="text"
               placeholder="region"
+              required
               onChange={(e) => {
                 setRegion(e.target.value);
               }}
@@ -136,6 +142,7 @@ const PublishTender = () => {
           <div className="row">
             <textarea
               type="text"
+              required
               placeholder="Enter your description"
               onChange={(e) => {
                 setDesc(e.target.value);
