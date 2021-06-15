@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
+import { useEffect } from "react";
 
 const TenderDetails = ({ match }) => {
   const id = Number(match.params.id);
 
   const [details, setDetails] = useState([]);
-  const getData = () => {
-    auth
+ 
+  useEffect(() => {
+    async function getTenders(){
+      auth
       .getTenders()
       .then((res) => {
         setDetails(res.data);
@@ -15,14 +18,16 @@ const TenderDetails = ({ match }) => {
       .catch((err) => {
         console.log(err);
       });
-    return details;
-  };
-  //getData();
-  React.useEffect(getData, []);
+    }
+    getTenders()
+  }, [])
 
   const [bids, setBids] = useState([]);
-  const getBidsData = () => {
-    auth
+  
+
+  useEffect(() => {
+    async function getBidsData(){
+      auth
       .getBids()
       .then((res) => {
         setBids(res.data);
@@ -30,10 +35,9 @@ const TenderDetails = ({ match }) => {
       .catch((err) => {
         console.log(err);
       });
-    return bids;
-  };
-  //getData();
-  React.useEffect(getBidsData, []);
+    }
+    getBidsData();
+  }, [])
 
   if (!details || details.length === 0) return <p>Cannot find any tenders</p>;
   if(!bids || bids.length===0) console.log('no bids')
@@ -138,7 +142,7 @@ const TenderDetails = ({ match }) => {
                 Place Bid
               </Button>
             )}
-          { totalbids.length!=0 && (
+          { totalbids.length!==0 && (
             <p> Bid Already placed</p>
           )
           }

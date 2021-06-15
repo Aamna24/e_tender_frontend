@@ -11,7 +11,7 @@ const ArchiveTenders = () => {
   useEffect(() => {
     async function fetchData() {
       
-      const response = await  auth
+      await  auth
       .getBids()
       .then((res) => {
         setBids(res.data);
@@ -25,10 +25,10 @@ const ArchiveTenders = () => {
   }, []);
   const filtered = bids.filter((x) => x.postedBy === organization_name);
   
-  const getTenderList = async () => {
+  /*const getTenderList = async () => {
 
    let array = filtered.map((e) => e.tenderId);
-    fetch("http://127.0.0.1:8000/api/publish-tender/").then((response) => {
+    await fetch("http://127.0.0.1:8000/api/publish-tender/").then((response) => {
       response.json().then((listing) => {
         let array2 = listing.filter((e) => array.includes(e.id));
         setArray(array2);
@@ -36,7 +36,20 @@ const ArchiveTenders = () => {
     });
   };
 
-  React.useEffect(getTenderList, []);
+  React.useEffect(getTenderList, []);  */
+
+  useEffect(() => {
+    async function getTenderList(){
+      let array = filtered.map((e) => e.tenderId);
+      await fetch("http://127.0.0.1:8000/api/publish-tender/").then((response) => {
+        response.json().then((listing) => {
+          let array2 = listing.filter((e) => array.includes(e.id));
+          setArray(array2);
+        });
+      });
+    }
+    getTenderList()
+  }, [filtered])
   return (
     <div className="container">
       <h4 className="text-center mb-5 mt-3">Archive Tenders</h4>

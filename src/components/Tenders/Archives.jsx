@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
-import Countdown from "react-countdown";
 import moment from "moment";
 
 const ArchivesTenders = () => {

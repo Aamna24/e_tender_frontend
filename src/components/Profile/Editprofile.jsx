@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import {Row, Col, Form} from 'react-bootstrap'
+import React, {useState,useEffect} from 'react'
 import * as auth from '../../services/authServices'
+import {Form} from 'react-bootstrap'
+
 const Editprofile = () => {
     const [user, setUser]= useState()
     const [organization_name, setOrgName] = useState(null)
@@ -9,8 +10,10 @@ const Editprofile = () => {
     const [contact, setContact] = useState()
     const [address, setAddress] = useState()
 
-    const getData = () => {
-        auth
+
+      useEffect(() => {
+        async function getData(){
+          await auth
           .getUsers()
           .then((res) => {
             setUser(res.data);
@@ -18,10 +21,9 @@ const Editprofile = () => {
           .catch((err) => {
             console.log(err);
           });
-        return user;
-      };
-      //getData();
-      React.useEffect(getData, []);
+        }
+        getData()
+      }, [])
       if(!user || user.length===0) return <p>Waiting for the data to load...</p>
       const filter = user.filter(x=>x.email===localStorage.getItem('email'))
       console.log(filter)

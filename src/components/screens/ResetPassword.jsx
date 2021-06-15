@@ -11,7 +11,6 @@ const ResetPassword = ({match}) => {
     
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
      const check=async()=>{
         const res= await auth.PasswordTokenCheckAPI(uidb64,token)

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
 
@@ -7,8 +7,11 @@ const MyBids = () => {
 
   const [bids, setBids] = useState([]);
 
-  const getData = () => {
-    auth
+  
+
+  useEffect(() => {
+    async function getData() {
+      auth
       .getBids()
       .then((res) => {
         setBids(res.data);
@@ -16,10 +19,9 @@ const MyBids = () => {
       .catch((err) => {
         console.log(err);
       });
-    return bids;
-  };
-  //getData();
-  React.useEffect(getData, []);
+    }
+    getData()
+  }, [])
   const filtered = bids.filter((x) => x.postedBy === email);
   return (
     <div className="container">

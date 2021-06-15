@@ -192,7 +192,7 @@ export default function NavBar({ user }) {
       <AppBar position="static" style={{ backgroundColor: "white" }}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            <img src="./brand.png" style={{width:"12%"}}/>
+            <img src="./brand.png" alt='logo' style={{width:"12%"}}/>
           </Typography>
 
           <div className={classes.grow} />

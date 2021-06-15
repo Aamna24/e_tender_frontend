@@ -2,11 +2,10 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 import { Container, Row } from "react-bootstrap";
-import { scryRenderedDOMComponentsWithTag } from "react-dom/test-utils";
+
 const Search = () => {
   const [search, setSearch] = React.useState();
   const [result, setRes] = React.useState();
-  const [msg, setMessage]= React.useState(false)
 
   const handleChange = () => {
     auth

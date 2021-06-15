@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 
@@ -10,8 +10,9 @@ const SearchBids = () => {
 
   const [result, setRes] = React.useState();
 
-  const getData = () => {
-    auth
+  useEffect(() => {
+    async function getData(){
+      await auth
       .searchBids(id)
       .then((res) => {
         setRes(res.data);
@@ -19,10 +20,10 @@ const SearchBids = () => {
       .catch((err) => {
         console.log(err);
       });
-    return result;
-  };
-  //getData();
-  React.useEffect(getData, []);
+    }
+    getData();
+  }, [id])
+
   if (!result || result.length === 0)
     return (
       <h4
