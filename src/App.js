@@ -7,7 +7,7 @@ import AboutUs from './components/screens/AboutUs';
 import ContactUs from './components/screens/ContactUs';
 import Login from './components/screens/Login';
 import Logout from './components/Logout';
-import SignUp from './components/screens/SignUp';
+//import SignUp from './components/screens/SignUp';
 import Footer from './components/footer';
 import Terms from './components/screens/Terms';
 import HomePage from './components/screens/HomePage'
@@ -27,9 +27,7 @@ import MyBids from './components/Profile/myBids';
 import MyTenders from './components/Profile/myTenders';
 import PublishTender from './components/Tenders/Publishtender';
 import LatestTenders from './components/Tenders/latestTenders';
-import AllTenders from './components/Tenders/Tenders';
 import MyTenderDetails from './components/Profile/myTenderDetails';
-import ArchivesTenders from './components/Tenders/Archives';
 import Test from './components/test';
 import ArchiveTenders from './components/Profile/ArchiveTenders';
 import Editprofile from './components/Profile/Editprofile';

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 
 const MyTenderDetails = ({ match }) => {
   const id = Number(match.params.id);
   const [details, setDetails] = useState([]);
-  const getData = () => {
-    auth
+  
+
+  useEffect(() => {
+    async function getData() {
+      await auth
       .getTenders()
       .then((res) => {
         setDetails(res.data);
@@ -14,10 +16,9 @@ const MyTenderDetails = ({ match }) => {
       .catch((err) => {
         console.log(err);
       });
-    return details;
-  };
-  //getData();
-  React.useEffect(getData, [details]);
+    }
+    getData()
+  }, [])
 
   if (!details || details.length === 0) return <p>Cannot find any tenders</p>;
 

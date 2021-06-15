@@ -9,11 +9,9 @@ const PublishTender = () => {
 
   const [category, setCategory] = React.useState();
   const [title, setTitle] = React.useState();
-  const [availibility, setAvailibility] = React.useState();
   const [region, setRegion] = React.useState();
   const [description, setDesc] = React.useState();
   const [contact, setContact] = React.useState();
-  const [opening_date, setOpeningDate] = React.useState();
   const [last_date, setLastDate] = React.useState();
   const [file_uploaded, setFile] = React.useState();
   const [err, setErr] = useState("");

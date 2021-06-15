@@ -1,43 +1,14 @@
-import React, { useRef, useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Countdown from "react-countdown";
 import moment from "moment";
-import ReactPaginate from "react-paginate";
 
-const useStyles = makeStyles((theme) => ({
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
-  cardHeader: {
-    backgroundColor:
-      theme.palette.type === "light"
-        ? theme.palette.grey[200]
-        : theme.palette.grey[700],
-  },
-  postTitle: {
-    fontSize: "16px",
-    textAlign: "left",
-  },
-  postText: {
-    display: "flex",
-    justifyContent: "left",
-    alignItems: "baseline",
-    fontSize: "14px",
-    textAlign: "left",
-    marginBottom: theme.spacing(2),
-  },
-}));
+
 
 const Posts = (props) => {
   const { posts } = props;
-  const [offset, setOffset] = 0;
-  const [perPage, setPerPage] = 10;
-  const [currentPage, setCurrentPage] = 0;
+ 
 
   if (!posts || posts.length === 0) return <p>Cannot find any Tenders</p>;
   const filter = posts.filter(

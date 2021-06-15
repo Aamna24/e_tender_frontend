@@ -2,7 +2,6 @@ import React ,{useState}from 'react'
 import {Form, Modal, Button} from 'react-bootstrap'
 
 import * as auth from '../../services/authServices'
-import Alert from 'react-popup-alert'
 
 const ResetPasswordEmail = () => {
 
@@ -11,7 +10,6 @@ const ResetPasswordEmail = () => {
     
 
       const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
 
     const handleSubmit=async(e)=>{
         e.preventDefault()

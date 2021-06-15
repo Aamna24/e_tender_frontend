@@ -1,23 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as auth from "../services/authServices";
 import Button from "@material-ui/core/Button";
 
 const FilteredCategory = ({ match }) => {
   const [tenders, setTenders] = useState([]);
 
-  const getData = () => {
-    auth.getTenders()
+  
+
+  useEffect(() => {
+    async function getData(){
+      auth.getTenders()
       .then((res) => {
         setTenders(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    return tenders;
-  };
-  //getData();
-  React.useEffect(getData, []);
-
+    }
+    getData()
+  }, [])
   
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>

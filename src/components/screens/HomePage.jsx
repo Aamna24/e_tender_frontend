@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import CategoriesCard from "../CategoriesCards";
 import LatestTenders from "../Tenders/latestTenders";
 import LaunchIcon from '@material-ui/icons/Launch';
-import { WbIncandescentTwoTone } from "@material-ui/icons";
 const HomePage = () => {
   return (
     <div>
