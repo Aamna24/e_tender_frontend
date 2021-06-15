@@ -16,7 +16,8 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
   link: {
-    color: "white",
+    //color: "white",
+    color:"black",
     paddingRight: "14px",
     flexGrow: 1,
     marginTop: "50px",
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       display: "flex",
     },
+
   },
   sectionMobile: {
     display: "flex",
@@ -164,22 +166,22 @@ export default function NavBar({ user }) {
       </MenuItem>
       <MenuItem>
         <Typography variant="h6">
-          <Link to="/home">Home</Link>
+          <Link to="/home">HOME</Link>
         </Typography>
       </MenuItem>
       <MenuItem>
         <Typography variant="h6">
-          <Link to="/contact-us">Contact us</Link>
+          <Link to="/contact-us">CONTACT US</Link>
         </Typography>
       </MenuItem>
       <MenuItem>
         <Typography variant="h6">
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/aboutus">ABOUT US</Link>
         </Typography>
       </MenuItem>
       <MenuItem>
         <Typography variant="h6">
-          <Link to="/publish">Publish Tender</Link>
+          <Link to="/publish">PUBLISH TENDER</Link>
         </Typography>
       </MenuItem>
     </Menu>
@@ -187,37 +189,37 @@ export default function NavBar({ user }) {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{ backgroundColor: "#16c79a" }}>
+      <AppBar position="static" style={{ backgroundColor: "white" }}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            E-Tender
+            <img src="./brand.png" style={{width:"12%"}}/>
           </Typography>
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Typography variant="h6" className={classes.title}>
               <Link to="/home" className={classes.link}>
-                Home
+                HOME
               </Link>
             </Typography>
             <Typography variant="h6">
               <Link to="/aboutus" className={classes.link}>
-                About Us
+                ABOUT US
               </Link>
             </Typography>
             <Typography variant="h6">
               <Link to="/search" className={classes.link}>
-                Search
+                SEARCH
               </Link>
             </Typography>
             <Typography variant="h6">
               <Link to="/publish" className={classes.link}>
-                Publish Tender
+                PUBLISH TENDER
               </Link>
             </Typography>
             <Typography variant="h6">
               <Link to="/contact-us" className={classes.link}>
-                Contact Us
+                CONTACT US
               </Link>
             </Typography>
             {!user && (
@@ -225,12 +227,12 @@ export default function NavBar({ user }) {
                 <div className={classes.sectionDesktop}>
                   <Typography variant="h6">
                     <Link to="/login" className={classes.link}>
-                      Login
+                      LOGIN
                     </Link>
                   </Typography>
                   <Typography variant="h6">
                     <Link to="/register" className={classes.link}>
-                      Signup
+                      SIGNUP
                     </Link>
                   </Typography>
                 </div>
@@ -248,7 +250,7 @@ export default function NavBar({ user }) {
                   onClick={handleProfileMenuOpen}
                   color="inherit"
                 >
-                  <AccountCircle />
+                  <AccountCircle style={{fill:"black"}} />
                 </IconButton>
               </div>
             )}

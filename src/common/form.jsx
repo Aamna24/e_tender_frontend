@@ -54,7 +54,7 @@ class Form extends Component {
         style={{
           borderRadius: "1rem",
           padding: "7px 20px 7px 20px",
-          backgroundColor: "#16c79a",
+          backgroundColor: "#050F2F",
           color: "white",
           height: "80%",
           fontSize: "16px",

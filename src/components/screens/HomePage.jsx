@@ -3,22 +3,32 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import CategoriesCard from "../CategoriesCards";
 import LatestTenders from "../Tenders/latestTenders";
-
+import LaunchIcon from '@material-ui/icons/Launch';
+import { WbIncandescentTwoTone } from "@material-ui/icons";
 const HomePage = () => {
   return (
     <div>
-      <div className="jumbotron"></div>
-      <div className="row container">
+      <div className="jumbotron">
+        <button onClick={()=>{
+          window.location.href="/register"
+        }} style={{backgroundColor:"white", display:"inline-block",color:"black",
+      textAlign:"center",marginBottom:0,verticalAlign:"middle",touchAction:"manipulation",
+      cursor:"pointer",border:"1px solid",whiteSpace:"nowrap",lineHeight:"1.42",borderRadius:"3px",padding:"10px 33px",
+      float:"right",fontSize:"22px",marginTop:"15%",marginRight:"5%"}}><LaunchIcon style={{marginRight:"7px",marginBottom:"2px"}}/>Create Account</button>
+      </div>
+      <div className="row ">
         <div className="col-md-6 text-center">
           <Button
             id="mbtns"
             className="btn btn-lg"
             style={{
-              backgroundColor: "#16c79a",
+              backgroundColor: "#050F2F",
               color: "white",
-              paddingLeft: "100px",
-              paddingRight: "100px",
-              marginLeft: "80px",
+              paddingLeft: "30%",
+              paddingRight: "30%",
+              marginLeft:"10%",
+              wordSpacing:'7px',
+              letterSpacing:"2px"
             }}
             component={Link}
             to="/search"
@@ -33,11 +43,13 @@ const HomePage = () => {
             component={Link}
             to="/tenders"
             style={{
-              backgroundColor: "#16c79a",
+              backgroundColor: "#050F2F",
               color: "white",
-              paddingLeft: "100px",
-              paddingRight: "100px",
-              marginLeft: "180px",
+              paddingLeft: "30%",
+              paddingRight: "30%",
+              marginRight:"10%",
+              wordSpacing:'7px',
+              letterSpacing:"2px"
             }}
           >
             View All Tenders

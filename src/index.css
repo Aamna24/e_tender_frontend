@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h3 {
-  color: darkgreen;
+  color: #050F2F;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -28,7 +28,7 @@ code {
 #btns {
   border-radius: 1rem;
   padding: 5px 15px 5px 15px;
-  background-color: #16c79a;
+  background-color: #050F2F;
   color: white;
 }
 
@@ -42,7 +42,7 @@ code {
 #mbtns {
   border-radius: 1rem;
   padding: 20px;
-  background-color: #16c79a;
+  background-color: #050F2F;
   color: white;
 }
 #bg-title {
@@ -61,9 +61,9 @@ code {
   font-size: 16px;
 }
 .jumbotron {
-  background-image: url("./pictures/jumbotron.PNG");
+  background-image: url("./pictures/jbt.jpg");
   background-size: cover;
-  height: 450px;
+  min-height: 550px;
 }
 .form-group .form-control {
   width: 80%;
@@ -80,28 +80,31 @@ img.card-img-top {
   font-size: 18px;
 }
 h2 {
-  color: #16c79a;
+  color:#050F2F;
 }
 
 .btn {
   border-radius: 1rem;
   padding: 5px 15px 5px 15px;
-  background-color: #16c79a;
+  background-color: #050F2F;
   color: white;
 }
 a.makeStyles-link-1:hover {
-  color: white;
+  color: #FE000D;
   text-decoration: underline;
 }
 
 #primary-search-account-menu
   > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
-  margin-top: 40px;
+  margin-top: 70px;
 }
 #primary-search-account-menu
   > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded
   > ul {
   padding: 0;
+}
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul{
+  padding-right: 0px
 }
 #profileCard {
   width: 5rem;
@@ -130,3 +133,39 @@ h6.MuiTypography-h6 a:hover {
   height: 5em
 
 }
+
+#root > div.makeStyles-grow-122 > header > div > div.makeStyles-sectionDesktop-127{
+  display: -webkit-box;
+  padding-right: 10%;
+}
+
+#root > div.makeStyles-grow-10 > header > div > div.makeStyles-sectionDesktop-15{
+  display: -webkit-box;
+  padding-right: 10%;
+}
+
+#root > div.makeStyles-grow-2 > header > div > div.makeStyles-sectionDesktop-7{
+  display: -webkit-box;
+  padding-right: 10%;
+}
+#root > div.makeStyles-grow-18 > header > div > div.makeStyles-sectionDesktop-23{
+  display: -webkit-box;
+  padding-right: 10%;
+}
+
+.card .card-body{
+ 
+  
+ border-inline: 10px solid #050F2F;
+  
+}
+
+.card  .card-body h2{
+  border-radius: 40px;
+  border-color: #050F2F;
+}
+h2.card-title{
+  border-radius: 40px;
+  border-color: #9b9da5 
+}
+

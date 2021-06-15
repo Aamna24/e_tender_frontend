@@ -30,29 +30,34 @@ const LatestTenders = () => {
           return (
             <div className="card mb-5">
               <div className="card-body">
-                <h5 className="card-title">{post.title}</h5>
-                <p className="card-text">Posted By: {post.organization_name}</p>
-                <p className="card-text">Sector: {post.category}</p>
-                <p className="card-text">Description: {post.description}</p>
+                <h3 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h3>
+                <p className="card-text" style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
+                <p className="card-text" style={{color:"black"}}>Sector: {post.category}</p>
+                <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
+                <p className="card-text" style={{color:"black"}}>Region: {post.region}</p>
 
-                <p className="card-text ">
+                <div className="row" style={{marginTop:"100px"}}>
+                  <div className="col-md-6">
+                  <p style={{color:"red", fontWeight:"bold",fontSize:"20px"}} >
                   {" "}
                   Bidding ends in: <Countdown date={post.last_date} />
                 </p>
-                <a href={post.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
-                </a>
-                <br />
-                <br />
-                <Button
+                    </div>
+                  <div className="col">
+                  <Button
                   id="btns"
+                  style={{float:"right"}}
                   onClick={(e) => {
                     window.location.href = "/details/" + post.id;
                   }}
                 >
                   View Details
                 </Button>
+                    </div>
+               
+            
+               
+                </div>
               </div>
             </div>
           );

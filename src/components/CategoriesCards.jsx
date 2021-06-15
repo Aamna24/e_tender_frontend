@@ -22,6 +22,10 @@ const Categoriescards = () => {
               >
                 Medical
               </div>
+
+
+
+              
             </div>
           </a>
         </div>
