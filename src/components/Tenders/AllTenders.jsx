@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import * as auth from "../services/authServices";
+import * as auth from "../../services/authServices";
 import ReactPaginate from "react-paginate";
-import "./styles.css";
+import "../styles.css";
 import moment from "moment";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Countdown from "react-countdown";
 
-export default class Test extends Component {
+export default class AllTenders extends Component {
   constructor(props) {
     super(props);
     this.state = {
       offset: 0,
       data: [],
-      perPage: 1,
+      perPage: 10,
       currentPage: 1,
     };
     this.handlePageClick = this.handlePageClick.bind(this);
@@ -71,8 +71,8 @@ export default class Test extends Component {
         ));
 
       this.setState({
-        pageCount: Math.ceil(data.length / this.state.perPage),
-
+        //pageCount: Math.ceil(data.length / this.state.perPage),
+        pageCount: Math.ceil(filter.length / this.state.perPage),
         postData,
       });
     });
@@ -96,6 +96,8 @@ export default class Test extends Component {
     this.receivedData();
   }
   render() {
+    console.log("hello")
+
     return (
       <div>
         <h4 className="mb-5 text-center mt-5">Showing All tenders</h4>;
@@ -105,7 +107,7 @@ export default class Test extends Component {
           nextLabel={"next"}
           breakLabel={"..."}
           breakClassName={"break-me"}
-          pageCount={this.state.pageCount-1}
+          pageCount={this.state.pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
           onPageChange={this.handlePageClick}

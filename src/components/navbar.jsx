@@ -188,91 +188,95 @@ export default function NavBar({ user }) {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{ backgroundColor: "white" }}>
-        <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <img src="./brand.png" alt='logo' style={{width:"12%"}}/>
-          </Typography>
-
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <Typography variant="h6" className={classes.title}>
-              <Link to="/home" className={classes.link}>
-                HOME
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link to="/aboutus" className={classes.link}>
-                ABOUT US
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link to="/search" className={classes.link}>
-                SEARCH
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link to="/publish" className={classes.link}>
-                PUBLISH TENDER
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link to="/contact-us" className={classes.link}>
-                CONTACT US
-              </Link>
-            </Typography>
-            {!user && (
-              <div className={classes.grow}>
-                <div className={classes.sectionDesktop}>
-                  <Typography variant="h6">
-                    <Link to="/login" className={classes.link}>
-                      LOGIN
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6">
-                    <Link to="/register" className={classes.link}>
-                      SIGNUP
-                    </Link>
-                  </Typography>
-                </div>
+      <>
+      {user!=='admin' && (
+          <div className={classes.grow}>
+          <AppBar position="static" style={{ backgroundColor: "white" }}>
+            <Toolbar>
+              <Typography className={classes.title} variant="h6" noWrap>
+                <img src="./brand.png" alt='logo' style={{width:"12%"}}/>
+              </Typography>
+    
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <Typography variant="h6" className={classes.title}>
+                  <Link to="/home" className={classes.link}>
+                    HOME
+                  </Link>
+                </Typography>
+                <Typography variant="h6">
+                  <Link to="/aboutus" className={classes.link}>
+                    ABOUT US
+                  </Link>
+                </Typography>
+                <Typography variant="h6">
+                  <Link to="/search" className={classes.link}>
+                    SEARCH
+                  </Link>
+                </Typography>
+                <Typography variant="h6">
+                  <Link to="/publish" className={classes.link}>
+                    PUBLISH TENDER
+                  </Link>
+                </Typography>
+                <Typography variant="h6">
+                  <Link to="/contact-us" className={classes.link}>
+                    CONTACT US
+                  </Link>
+                </Typography>
+                {!user && (
+                  <div className={classes.grow}>
+                    <div className={classes.sectionDesktop}>
+                      <Typography variant="h6">
+                        <Link to="/login" className={classes.link}>
+                          LOGIN
+                        </Link>
+                      </Typography>
+                      <Typography variant="h6">
+                        <Link to="/register" className={classes.link}>
+                          SIGNUP
+                        </Link>
+                      </Typography>
+                    </div>
+                  </div>
+                )}
+    
+                {user && (
+                  <div>
+                    {" "}
+                    <IconButton
+                      edge="end"
+                      aria-label="account of current user"
+                      aria-controls={menuId}
+                      aria-haspopup="true"
+                      onClick={handleProfileMenuOpen}
+                      color="inherit"
+                    >
+                      <AccountCircle style={{fill:"black"}} />
+                    </IconButton>
+                  </div>
+                )}
               </div>
-            )}
-
-            {user && (
-              <div>
-                {" "}
+              <div className={classes.sectionMobile}>
+                <Typography style={{}} variant="h6" noWrap>
+                  E-Tender
+                </Typography>
                 <IconButton
-                  edge="end"
-                  aria-label="account of current user"
-                  aria-controls={menuId}
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
                   aria-haspopup="true"
-                  onClick={handleProfileMenuOpen}
+                  onClick={handleMobileMenuOpen}
                   color="inherit"
                 >
-                  <AccountCircle style={{fill:"black"}} />
+                  <MoreIcon />
                 </IconButton>
               </div>
-            )}
-          </div>
-          <div className={classes.sectionMobile}>
-            <Typography style={{}} variant="h6" noWrap>
-              E-Tender
-            </Typography>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+            </Toolbar>
+          </AppBar>
+          {renderMobileMenu}
+          {renderMenu}
+        </div>
+      )}
+      </>
   );
 }
