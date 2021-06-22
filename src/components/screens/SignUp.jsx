@@ -1,213 +1,182 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import userServices from "../../services/UserService";
-import { toast } from "react-toastify";
-toast.configure();
+import React from 'react'
+import {useFormik} from 'formik'
+import '../styles.css'
+import * as auth from '../../services/authServices'
 
-export default function Register() {
-  const [email, setEmail] = React.useState();
-  const [organization_name, setOrganizationName] = useState();
-  const [password, setPassword] = useState();
-  const [ntn, setNTN] = useState(0);
-  const [contact, setContact] = useState();
-  const [address, setAddress] = useState("");
-  const [emailErr, setEmailError] = useState("");
-  const [contactErr, setContErr] = useState();
-  const [cnicError, setError] = useState();
-  const [sub, setSub] = useState(false);
-  const [ntnErr, setntnError] = useState("");
-  const [AddErr, setAddErr] = useState("");
-  const [orgErr, setOrgError] = useState();
+const validate = values => {
+  const errors = {};
 
-  const validateCNIC = (value) => {
-    var cnic_no = value;
-    var cnic_no_regex = /^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/;
-
-    if (cnic_no_regex.test(cnic_no)) {
-      setError("");
-    } else if (ntn === 0) {
-      setError("This field is required");
-    } else {
-      setError("Please enter ntn in correct format");
-      setSub(true);
+    if (!values.organization_name) {
+      errors.organization_name = 'Required';
+    } else if (values.organization_name.length > 30 ) {
+      errors.organization_name = 'Must be 30 characters or less';
     }
-    if (address === "") {
-      setAddErr("This field is required");
-    } else {
-      setAddErr("");
+  
+    if (!values.password) {
+      errors.password = 'Required';
+    } else if (values.password.length < 6) {
+      errors.password = 'Must be 6 characters or greater';
     }
-  };
+  
+    if (!values.email) {
+      errors.email = 'Required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      errors.email = 'Invalid email address';
+    }
+    if (!values.ntn) {
+        errors.ntn = 'Required';
+      } else if (!/^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/i.test(values.ntn)) {
+        errors.ntn = 'Invalid NTN format. It should be XXXXX-XXXXXXX-X';
+      }
+      if (!values.contact) {
+        errors.contact = 'Required';
+      } else if (!/^(\+92)[0-9]{10}$/i.test(values.contact)) {
+        errors.contact = 'Invalid contact format. It should be +92XXXXXXXXXX';
+      }
+      if (!values.address) {
+        errors.address = 'Required';
+      } 
+  return errors
+}
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6"></div>
-        <div className="col-md-6 mt-4">
-          <h4>Sign Up</h4>
+
+const SignUp = () => {
+
+  const formik = useFormik({
+    initialValues: {
+      organization_name: '',
+      password: '',
+      email: '',
+      ntn:"",
+      contact:'',
+      address:''
+
+    },
+    validate,
+    onSubmit: async(values) => {
+      try {
+         const res = await auth.registerUser(values)
+         if(res.status===201){
+           window.location.href="/msg"
+         }
+        
+      } catch (error) {
+        if(error.response.data.email){
+          formik.errors.email=error.response.data.email
+        }
+        if(error.response.data.ntn){
+          formik.errors.ntn=error.response.data.ntn
+        }
+        if(error.response.data.contact){
+          formik.errors.contact=error.response.data.contact
+        }
+        if(error.response.data.organization_name){
+          formik.errors.organization_name=error.response.data.organization_name
+        }
+      }
+    },
+  });
+       
+          return (
+            <div className='container'>
+              <div className='row'>
+              <div className="col-md-6"></div>
+              <div className="col-md-6 mt-4">
+              <h4>Sign Up</h4>
           <p>
             <i className="fas fa-user">Create your account</i>
           </p>
-          <form>
-            <div className="form-group">
+            <form onSubmit={formik.handleSubmit} >
+                <div className='form-group'>
               <label htmlFor="organization_name">Organization Name</label>
               <input
                 id="organization_name"
+                name="organization_name"
+                className='form-control'
                 type="text"
-                className="form-control"
-                onChange={(e) => {
-                  setOrganizationName(e.target.value);
-                }}
+                onChange={formik.handleChange}
+                value={formik.values.organization_name}
               />
-            </div>
-            {orgErr && <p style={{ color: "red" }}>{orgErr}</p>}
+            {formik.errors.organization_name ? <div style={{color:'red'}}>{formik.errors.organization_name}</div> : null}
 
-            <div className="form-group">
+              </div>
+            <div className='form-group'>
               <label htmlFor="password">Password</label>
               <input
                 id="password"
+                className='form-control'
+                name="password"
                 type="password"
-                className="form-control"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={formik.handleChange}
+                value={formik.values.password}
               />
-            </div>
+              {formik.errors.password ? <div style={{color:'red'}}>{formik.errors.password}</div> : null}
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
+              </div>
+        
+        <div className='form-group'>
+              <label htmlFor="email">Email Address</label>
               <input
                 id="email"
+                name="email"
                 type="email"
-                className="form-control"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                className='form-control'
+                onChange={formik.handleChange}
+                value={formik.values.email}
               />
-            </div>
-            <span>
-              {emailErr && <p style={{ color: "red" }}>{emailErr}</p>}
-            </span>
-            <div className="form-group">
+              {formik.errors.email ? <div style={{color:'red'}}>{formik.errors.email}</div> : null}
+
+              </div>
+
+<div className='form-group'>
               <label htmlFor="ntn">NTN</label>
               <input
                 id="ntn"
+                name="ntn"
                 type="text"
-                placeholder="ex xxxxx-xxxxxxx-x"
-                className="form-control"
-                onChange={(e) => {
-                  setNTN(e.target.value);
-                }}
+                className='form-control'
+                onChange={formik.handleChange}
+                value={formik.values.ntn}
               />
-            </div>
-            <span>
-              {cnicError && <p style={{ color: "red" }}>{cnicError}</p>}
+              {formik.errors.ntn ? <div style={{color:'red'}}>{formik.errors.ntn}</div> : null}
 
-              {ntnErr && <p style={{ color: "red" }}>{ntnErr}</p>}
-            </span>
-            <div className="form-group">
-              <label htmlFor="contact">Contact No</label>
+              </div>
+
+              <div className='form-group'>
+              <label htmlFor="contact"> Contact</label>
               <input
                 id="contact"
-                type="text"
-                className="form-control"
-                onChange={(e) => {
-                  setContact(e.target.value);
-                }}
+                name="contact"
+                type="tel"
+                className='form-control'
+                onChange={formik.handleChange}
+                value={formik.values.contact}
               />
-            </div>
-            {contactErr && <p style={{ color: "red" }}>{contactErr}</p>}
+              {formik.errors.contact ? <div style={{color:'red'}}>{formik.errors.contact}</div> : null}
 
-            <div className="form-group">
-              <label htmlFor="address">Address</label>
+              </div>
+
+            <div className='form-group'>
+              <label htmlFor="address"> Address</label>
               <input
                 id="address"
+                name="address"
                 type="text"
-                className="form-control"
-                onChange={(e) => {
-                  setAddress(e.target.value);
-                }}
+                className='form-control'
+                onChange={formik.handleChange}
+                value={formik.values.address}
               />
+              {formik.errors.address ? <div style={{color:'red'}}>{formik.errors.address}</div> : null}
+
+              </div>
+        
+              <button id="btns" type="submit">Submit</button>
+            </form>
             </div>
-            <span>{AddErr && <p style={{ color: "red" }}>{AddErr}</p>}</span>
-
-            <Button
-              id="btns"
-              onClick={(e) => {
-                validateCNIC(ntn);
-                {
-                  sub &&
-                    userServices
-                      .register(
-                        organization_name,
-                        password,
-                        email,
-                        ntn,
-                        contact,
-                        address
-                      )
-                      .then()
-
-                      .catch((err) => {
-                        if (!err.response.data.email) {
-                          setEmailError("");
-                        }
-                        if (!err.response.data.organization_name) {
-                          setOrgError("");
-                        }
-                        if (!err.response.data.contact) {
-                          setContErr("");
-                        }
-                        if (!err.response.data.ntn) {
-                          setntnError("");
-                        }
-                      });
-                }
-                {
-                  !sub &&
-                    userServices
-                      .register(
-                        organization_name,
-                        password,
-                        email,
-                        ntn,
-                        contact,
-                        address
-                      )
-                      .then((data) => {
-                        //console.log("data", data);
-                        window.location.href = "/msg";
-                      })
-
-                      .catch((err) => {
-                        if (err.response.data.email) {
-                          setEmailError(err.response.data.email);
-                        } else {
-                          setEmailError("");
-                        }
-                        if (err.response.data.organization_name) {
-                          setOrgError(err.response.data.organization_name);
-                        } else {
-                          setOrgError("");
-                        }
-                        if (err.response.data.ntn) {
-                          setntnError(err.response.data.ntn);
-                        } else {
-                          setntnError("");
-                        }
-                        if (err.response.data.contact) {
-                          setContErr(err.response.data.contact);
-                        } else {
-                          setContErr("");
-                        }
-                      });
-                }
-              }}
-            >
-              Register
-            </Button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+              </div>
+            </div>
+          );
+    
 }
+
+export default SignUp

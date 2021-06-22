@@ -71,6 +71,7 @@ const MyBids = () => {
                 </Button>
                 <Button
                   id="btns"
+                  style={{backgroundColor:"red", marginLeft:"5px"}}
                   onClick={(e) => {
                     auth.deleteBid(post.id);
                     window.location.reload();

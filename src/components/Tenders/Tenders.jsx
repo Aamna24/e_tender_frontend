@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import posts from "../posts";
 import postLoading from "../postLoading";
 
-const AllTenders = () => {
+const Tenders = () => {
   const PostLoading = postLoading(posts);
   const [appState, setAppState] = useState({
     loading: false,

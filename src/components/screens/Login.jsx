@@ -23,7 +23,14 @@ class Login extends Form {
     try {
       const { data } = this.state;
       await auth.login(data.username, data.password);
-      window.location = "/home";
+      if(localStorage.getItem('organization')!=='admin'){
+        window.location = "/home";
+      }
+      else{
+        //window.location.href='/admin'
+        window.location.href='https://etender-backend.herokuapp.com/admin/'
+
+      }
     } catch (ex) {
       if (ex.response !== 200) {
         this.setState({
