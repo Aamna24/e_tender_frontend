@@ -9,14 +9,16 @@ const Footer = () => {
       <>
       {localStorage.getItem('organization')!=='admin' && (
         <MDBFooter
-        className="font-small pt-4 mt-4 "
+        className="font-small pt-4"
         style={{ backgroundColor: "#00164c" }}
       >
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
             <MDBCol md="3">
               <h5 className="title">E-Tender</h5>
-              <p>About e-tender.</p>
+              <p>E-tender is a Tender Portal which provides Tender and Tender Result Information. 
+                The portal provides a platform for finding Tenders and also provides bid placing and 
+                other relevant services to help contractors in winning tenders.</p>
             </MDBCol>
             <MDBCol md="3">
               <h5 className="title">
@@ -25,16 +27,16 @@ const Footer = () => {
               </h5>
               <ul>
                 <li className="list-unstyled">
-                  <a href="#!">Punjab</a>
+                  Punjab
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Sindh</a>
+                  Sindh
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">KPK</a>
+                  KPK
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Balochistan</a>
+                  Balochistan
                 </li>
               </ul>
             </MDBCol>
@@ -45,19 +47,24 @@ const Footer = () => {
               </h5>
               <ul>
                 <li className="list-unstyled">
-                  <a href="#!">Construction Tenders</a>
+                  <a href="/category/Construction">Construction Tenders</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Medical Tenders</a>
+                  <a href="/category/Medical">Medical Tenders</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">Electrical Tenders</a>
+                  <a href="/category/Electrical">Electrical Tenders</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">IT Tenders</a>
+                  <a href="/category/IT">IT Tenders</a>
                 </li>
-                <li className="list-unstyled">Telecom tenders</li>
-                <li className="list-unstyled">Oil and Gas Tenders</li>
+                <li className="list-unstyled">
+                <a href="/category/Telecom">Telecommunication Tenders</a>
+
+                </li>
+                <li className="list-unstyled">
+                <a href="/category/Oil and Gas">Oil and Gas</a>
+                </li>
               </ul>
             </MDBCol>
             <MDBCol md="3">
@@ -67,10 +74,10 @@ const Footer = () => {
               </h5>
               <ul>
                 <li className="list-unstyled">
-                  <a href="#!">Privacy Policy</a>
+                  <a href="/privacy-policy">Privacy Policy</a>
                 </li>
                 <li className="list-unstyled">
-                  <a href="#!">FAQ</a>
+                  <a href="/faq">FAQ</a>
                 </li>
                 <li className="list-unstyled">
                   <NavLink to="/terms">Terms and Conditions</NavLink>
@@ -85,7 +92,7 @@ const Footer = () => {
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid>
             &copy; {new Date().getFullYear()} Copyright:{" "}
-            <a href="https://etenders.herokuapp.com"> etender.com </a>
+            <a href="https://etenders.herokuapp.com"> etender.com </a> All Rights Reserved
           </MDBContainer>
         </div>
       </MDBFooter>

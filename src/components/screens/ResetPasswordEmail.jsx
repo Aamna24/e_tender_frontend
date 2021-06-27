@@ -20,8 +20,8 @@ const ResetPasswordEmail = () => {
 
     }
     return (
-        <div className="container">
-            <h3>Forgot Your password?</h3>
+        <div className="container " style={{marginBottom:"115px", marginTop:"110px"}}>
+            <h2 >Forgot Your Password?</h2>
             <p>Dont worry! Just fill in Your email and we will send you a link to reset your password.</p>
             <Form className="container" onSubmit={handleSubmit}>
         <Form.Group controlId="email">
@@ -33,7 +33,7 @@ const ResetPasswordEmail = () => {
           ></Form.Control>
           
         </Form.Group>
-        <button type="submit">Reset Password</button>
+        <button id="btns" type="submit" className='mt-3 '>Reset Password</button>
 
         </Form>
         <Modal show={show} onHide={handleClose}>

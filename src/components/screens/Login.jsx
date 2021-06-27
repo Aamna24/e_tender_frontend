@@ -42,27 +42,27 @@ class Login extends Form {
 
   render() {
     return (
-      <>
-        <div className="col-md-6 mx-auto my-auto text-center form p-4 mb-5">
-          <h3>Sign In</h3>
+      <div className='wrapper'>
+        <div className="col-md-6 mx-auto my-auto text-center  p-5 " id="formContent">
+          <h2 className='mb-3'>SIGN IN</h2>
           {this.state.err && (
             <p style={{ color: "red" }}>
               Invalid username or password. Please try again
             </p>
           )}
-          <form onSubmit={this.handleSubmit} className="ml-5">
+          <form onSubmit={this.handleSubmit} >
             {this.renderInput("username", "Email")}
             {this.renderInput("password", "Password", "password")}
             {this.renderButton("Login")}
           </form>
         </div>
-        <p className="container mx-auto text-center">
-          Don't have an account?<Link to="/register">Sign Up</Link>
+        <p className="container mx-auto text-center mt-5">
+          Don't have an account?<Link to="/register" className='ml-1' style={{color:"#050F2F",fontWeight:"500"}}>Sign Up</Link>
         </p>
-        <p className="container mx-auto text-center">
-          <Link to="/request-reset-email">Forgot Password?</Link>
+        <p className="container mx-auto text-center ">
+          <Link to="/request-reset-email" style={{color:"#050F2F",fontWeight:"500",}}>Forgot Password?</Link>
         </p>
-      </>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 import { useEffect } from "react";
-
+import GetAppIcon from '@material-ui/icons/GetApp';
 const TenderDetails = ({ match }) => {
   const id = Number(match.params.id);
 
@@ -125,12 +125,13 @@ const TenderDetails = ({ match }) => {
               <div className="col-md-6">
                 <p>{product.description}</p>
               </div>
-              <a href={product.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
+              <a href={product.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
+                  {" "}<GetAppIcon/>
+                  Click here to download Soft Copy{" "}
                 </a>
             </div>
-            {!(auth.getCurrentUser() === product.organization_name) && totalbids.length===0 && (
+           <div style={{textAlign:'end'}} className='mb-5'>
+           {!(auth.getCurrentUser() === product.organization_name) && totalbids.length===0 && auth.getCurrentUser() && (
               <Button
                 variant="contained"
                 color="primary"
@@ -138,14 +139,37 @@ const TenderDetails = ({ match }) => {
                   window.location.href =
                     "/place-bid/" + product.id + "/" + product.title;
                 }}
+                style={{backgroundColor:'#cc3c34' }}
+                
               >
                 Place Bid
               </Button>
             )}
+            
+             </div>
           { totalbids.length!==0 && (
-            <p> Bid Already placed</p>
+            <p style={{color:"#cc3c34",  fontSize:"20px",fontWeight:"700"}}> Bid Already Placed</p>
           )
           }
+          <div style={{textAlign:'end'}} className='mb-5'>
+          {!auth.getCurrentUser() && (
+             <Button
+             
+             variant="contained"
+             color="primary"
+             
+             onClick={(e) => {
+               window.location.href =
+                 "/login" 
+             }}
+             style={{backgroundColor:'#cc3c34' }}
+
+             
+           >
+             Place Bid
+           </Button>
+          )}
+            </div>
            
           </div>
         ))}
