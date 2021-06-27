@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
-
+import moment from 'moment'
 const ArchiveTenders = () => {
   const organization_name = localStorage.getItem("organization");
 
@@ -50,10 +50,13 @@ const ArchiveTenders = () => {
     }
     getTenderList()
   }, [filtered])
+  const archive = farray.filter(
+    (x) => x.last_date > moment().format().split("T")[0]
+  );
   return (
     <div className="container">
       <h2 className="text-center mb-5 mt-3">Archive Tenders</h2>
-      {farray.map((post) => {
+      {archive.map((post) => {
         return (
           <div class="card mb-5">
             <div class="card-body">
