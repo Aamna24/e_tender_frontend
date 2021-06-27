@@ -51,7 +51,7 @@ const ArchiveTenders = () => {
     getTenderList()
   }, [filtered])
   const archive = farray.filter(
-    (x) => x.last_date > moment().format().split("T")[0]
+    (x) => x.last_date < moment().format().split("T")[0]
   );
   return (
     <div className="container">
