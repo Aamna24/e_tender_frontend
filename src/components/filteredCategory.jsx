@@ -19,7 +19,15 @@ const FilteredCategory = ({ match }) => {
     }
     getData()
   }, [])
-  
+  const filter = tenders.filter((x) => x.category === match.params.category)
+  //const filter = tenders.filter(item => item.category.includes(match.params.category));
+  console.log("c",match.params.category)
+  console.log("f",filter)
+  if(filter.length===0 || !filter.length) return (
+    <React.Fragment>
+      <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No tenders available</h2>
+    </React.Fragment>
+  )
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
       {tenders
@@ -52,9 +60,9 @@ const FilteredCategory = ({ match }) => {
           );
         })}
 
-      <Button id="btns" href="/tenders">
+     {/* <Button id="btns" href="/tenders">
         View More
-      </Button>
+      </Button>*/}
     </div>
   );
 };

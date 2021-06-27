@@ -53,13 +53,14 @@ const Editprofile = () => {
       }
     return (
         <p>
-        <h3 className="text-center mt-5">Edit Profile</h3>
+        <h2 className="text-center mt-5">EDIT PROFILE</h2>
         <Form className="container" onSubmit={handleSubmit}>
         <Form.Group controlId="organization_name">
           <Form.Label>Organization Name</Form.Label>
           <Form.Control
             type="text"
             value={organization_name}
+            disabled
             defaultValue={filter[0].organization_name}
             onChange={(e) => setOrgName(e.target.value)}
           ></Form.Control>
@@ -70,6 +71,7 @@ const Editprofile = () => {
           <Form.Control
             type="text"
             value={ntn}
+            disabled
             defaultValue={filter[0].ntn}
             onChange={(e) => setNtn(e.target.value)}
           ></Form.Control>

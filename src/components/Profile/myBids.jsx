@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const MyBids = () => {
   const email = localStorage.getItem("organization");
@@ -25,7 +26,7 @@ const MyBids = () => {
   const filtered = bids.filter((x) => x.postedBy === email);
   return (
     <div className="container">
-      <h4 className="text-center mb-5 mt-3">My Bids</h4>
+      <h2 className="text-center mb-5 mt-3">My Bids</h2>
 
       {filtered
         .sort((a, b) => b.id - a.id)
@@ -33,11 +34,11 @@ const MyBids = () => {
           return (
             <div class="card mb-5">
               <div class="card-body">
-                <h5 class="card-title">{post.title}</h5>
+              <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
 
-                <p class="card-text">Tender ID: {post.tenderId}</p>
+                <p class="card-text" style={{color:"black"}}>Tender ID: {post.tenderId}</p>
 
-                <p class="card-text">Bidding Amount: {post.bidding_amount}</p>
+                <p class="card-text" style={{color:"black"}}>Bidding Amount: {post.bidding_amount}</p>
                 {post.status === "Approved" && (
                   <p class="card-text">
                     <button class="btn btn-success">{post.status}</button>{" "}
@@ -50,13 +51,13 @@ const MyBids = () => {
                 )}
                 {post.status === "Under Review" && (
                   <p class="card-text">
-                    <button class="btn btn-primary ">{post.status}</button>{" "}
+                    <button class="btn btn-primary"  style={{cursor:"context-menu",backgroundColor:"blue"}}>{post.status}</button>{" "}
                   </p>
                 )}
 
-                <a href={post.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
+<a href={post.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
+                  {" "}<GetAppIcon/>
+                  Click here to download Soft Copy{" "}
                 </a>
                 <br />
                 <br />
@@ -69,6 +70,7 @@ const MyBids = () => {
                 >
                   View Details
                 </Button>
+                <div style={{textAlign:"end", marginTop:"-35px"}}>
                 <Button
                   id="btns"
                   style={{backgroundColor:"red", marginLeft:"5px"}}
@@ -79,6 +81,7 @@ const MyBids = () => {
                 >
                   Delete Bid
                 </Button>
+                  </div>
               </div>
             </div>
           );

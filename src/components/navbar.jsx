@@ -13,6 +13,8 @@ import SubjectIcon from "@material-ui/icons/Subject";
 import GavelIcon from "@material-ui/icons/Gavel";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import ArchiveIcon from '@material-ui/icons/Archive';
+import authServices from "../services/authServices";
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -123,13 +125,29 @@ export default function NavBar({ user }) {
             </div>
             
           </div>
+
+          <div className='row mb-2 '>
+            <div className='col-md-3'>
+
+            </div>
+            <div classname='col-md-3' >
+            <Link to="/archive" onClick={handleMenuClose}>
+                <ArchiveIcon />
+                <br />
+                Archive Tenders
+              </Link>
+            </div>
+            <div classname='col-md-3'>
+
+            </div>
+          </div>
           
           <hr className="solid"></hr>
 
           <div className="row">
             <div className="col-md-6">
               <div className="text-center">
-                <Link to="/edit-profile">Manage Account</Link>
+                <Link to="/edit-profile">Edit Profile</Link>
               </div>
             </div>
             <div className="col-md-6">
@@ -194,7 +212,7 @@ export default function NavBar({ user }) {
           <AppBar position="static" style={{ backgroundColor: "white" }}>
             <Toolbar>
               <Typography className={classes.title} variant="h6" noWrap>
-                <img src="./brand.png" alt='logo' style={{width:"12%"}}/>
+                <img src="https://res.cloudinary.com/dexn8tnt9/image/upload/v1624609292/fyp/brand_waq2q5.png" alt='logo' style={{width:"12%"}}/>
               </Typography>
     
               <div className={classes.grow} />
@@ -215,9 +233,16 @@ export default function NavBar({ user }) {
                   </Link>
                 </Typography>
                 <Typography variant="h6">
-                  <Link to="/publish" className={classes.link}>
+                  {!authServices.getCurrentUser() && (
+                    <Link to="/login" className={classes.link}>
                     PUBLISH TENDER
                   </Link>
+                  )}
+                  {authServices.getCurrentUser() && (
+                    <Link to="/publish" className={classes.link}>
+                    PUBLISH TENDER
+                  </Link>
+                  )}
                 </Typography>
                 <Typography variant="h6">
                   <Link to="/contact-us" className={classes.link}>

@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 import Countdown from "react-countdown";
 import moment from "moment";
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const LatestTenders = () => {
   const [tenders, setTenders] = useState([]);
@@ -30,13 +31,13 @@ const LatestTenders = () => {
           return (
             <div className="card mb-5">
               <div className="card-body">
-                <h3 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h3>
-                <p className="card-text" style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
-                <p className="card-text" style={{color:"black"}}>Sector: {post.category}</p>
+                <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
+                <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
+                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
                 <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
                 <p className="card-text" style={{color:"black"}}>Region: {post.region}</p>
 
-                <div className="row" style={{marginTop:"100px"}}>
+                <div className="row" >
                   <div className="col-md-6">
                   <p style={{color:"red", fontWeight:"bold",fontSize:"20px"}} >
                   {" "}
@@ -63,7 +64,7 @@ const LatestTenders = () => {
           );
         })}
       <div className="text-center">
-        <Button href="/tenders">View More</Button>
+        <Button href="/tenders"><VisibilityIcon className='mr-1'/>View More</Button>
       </div>
     </div>
   );

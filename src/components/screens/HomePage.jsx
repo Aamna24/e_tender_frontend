@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import CategoriesCard from "../CategoriesCards";
 import LatestTenders from "../Tenders/latestTenders";
 import LaunchIcon from '@material-ui/icons/Launch';
+
 const HomePage = () => {
   return (
     <div>
@@ -16,7 +17,7 @@ const HomePage = () => {
       float:"right",fontSize:"22px",marginTop:"15%",marginRight:"5%"}}><LaunchIcon style={{marginRight:"7px",marginBottom:"2px"}}/>Create Account</button>
       </div>
       <div className="row ">
-        <div className="col-md-6 text-center">
+        <div className="col-md-6 col-xs-12 text-center">
           <Button
             id="mbtns"
             className="btn btn-lg"
@@ -35,7 +36,7 @@ const HomePage = () => {
             Search For Tenders
           </Button>
         </div>
-        <div className="col-md-6 text-center">
+        <div className="col-md-6 text-center col-xs-12">
           <Button
             id="mbtns"
             className="btn btn-lg"
@@ -57,21 +58,18 @@ const HomePage = () => {
       </div>
       <br />
       <div className="container text-center">
-        <h3 style={{ marginTop: "55px" }}>Categories</h3>
+        <h2 style={{ marginTop: "55px" }}>CATEGORIES</h2>
         <br />
         <CategoriesCard />
       </div>
       <br />
       <br />
       <div className="container text-center solid ">
-        <h3 style={{ marginTop: "18px" }}>Latest Tenders</h3>
+        <h2 style={{ marginTop: "18px" }}>LATEST TENDERS</h2>
         <LatestTenders />
         <br />
       </div>
-      <div className="container text-center">
-        <h3 style={{ marginTop: "45px" }}>Our Clients</h3>
-        <br />
-      </div>
+      
     </div>
   );
 };

@@ -40,7 +40,7 @@ const PlaceBid = ({ match }) => {
 
   return (
     <div className="col-md-6 mx-auto text-center form p-4">
-      <h5 className="mb-5 mt-3">Place Bid</h5>
+      <h1 className="mb-5 mt-3" style={{fontWeight:"500"}}>Place Bid</h1>
 
       <Form>
         <div className="form-group">

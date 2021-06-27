@@ -20,6 +20,9 @@ import HomePage from './components/screens/HomePage'
 import Search from './components/screens/Search';
 import ResetPasswordEmail from './components/screens/ResetPasswordEmail';
 import ResetPassword from './components/screens/ResetPassword';
+import AllCategories from './components/screens/AllCategories';
+import PrivacyPolicy from './components/screens/PrivacyPolicy'
+import FAQ from './components/screens/FAQ'
 
 import TenderDetails from './components/Tenders/TenderDetails';
 import PublishTender from './components/Tenders/Publishtender';
@@ -75,8 +78,13 @@ class App extends React.Component {
         
         <Switch>
           <Route path="/aboutus" component={AboutUs} />
-          <Route path="/contact-us" component={ContactUs} />
           <Route path="/login" component={Login} />
+
+          <Route path="/all-categories" component={AllCategories} />
+          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route path="/faq" component={FAQ} />
+
           <Route path="/register" component={SignUp} />
           <Route path="/email-verify" component={EmailVerify}/>
         <Route path="/msg" component={Msg}/>
@@ -117,6 +125,7 @@ class App extends React.Component {
         
      
       <Footer />
+
       </React.Fragment>
      
     );

@@ -1,4 +1,6 @@
 import React from "react";
+import Button from '@material-ui/core/Button'
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const Categoriescards = () => {
   return (
@@ -9,7 +11,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./medical.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625045/FYP/doctor-with-stethoscope-hands-hospital-background_cdexs9.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -35,7 +37,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./construction.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625252/FYP/construction-silhouette_eui0mi.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -56,7 +58,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./it.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625802/FYP/93472_uj4gzx.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -66,7 +68,7 @@ const Categoriescards = () => {
                   backgroundColor: "rgba(0, 0, 0, 0.6)",
                 }}
               >
-                IT
+                Information Technology
               </div>
             </div>
           </a>
@@ -79,7 +81,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./oil.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625867/FYP/12012_ftcbda.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -99,7 +101,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./electrical.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625954/FYP/high-voltage-post-high-voltage-tower_uxzt2s.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -119,7 +121,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="./telecom.jfif"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626060/FYP/23175_bnnk5e.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -129,11 +131,14 @@ const Categoriescards = () => {
                   backgroundColor: "rgba(0, 0, 0, 0.6)",
                 }}
               >
-                Telecom
+                Telecommunication
               </div>
             </div>
           </a>
         </div>
+      </div>
+      <div className="text-center mt-5">
+        <Button href="/all-categories"><VisibilityIcon className='mr-1'/>View More</Button>
       </div>
     </div>
   );

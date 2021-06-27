@@ -52,19 +52,17 @@ const ArchiveTenders = () => {
   }, [filtered])
   return (
     <div className="container">
-      <h4 className="text-center mb-5 mt-3">Archive Tenders</h4>
+      <h2 className="text-center mb-5 mt-3">Archive Tenders</h2>
       {farray.map((post) => {
         return (
           <div class="card mb-5">
             <div class="card-body">
-              <h5 class="card-title">{post.title}</h5>
-              <p class="card-text">Sector: {post.category}</p>
-              <p class="card-text">Description: {post.description}</p>
-              <p class="card-text">Action Deadline: {post.last_date}</p>
-              <a href={post.file_uploaded} download="My_File.pdf">
-                {" "}
-                Soft Copy{" "}
-              </a>
+            <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
+            <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
+                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
+                <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
+                <p className="card-text" style={{color:"black"}}>Action Deadline: {post.last_date}</p>
+              
               <br />
               <br />
               <Button

@@ -7,27 +7,56 @@ class ContactUs extends Form {
   render() {
     return (
       <Container>
-        <h3 className="text-center mb-5 mt-5">Contact </h3>
-        <Row>
-          <Col md={6}>
-            <Col className="row mr-2">
-              <div className="col-md-6">{this.renderInput("name", "Name")}</div>
-              <div className="col-md-6 ">
-                {this.renderInput("email", "Email")}
+        <h2 className="text-center mb-5 mt-5">CONTACT US </h2>
+        <Row className='mb-5'>
+        <Col md={6}>
+        <form  >
+                <div className='form-group'>
+              <label htmlFor="organization_name">Name</label>
+              <input
+                id="organization_name"
+                name="organization_name"
+                className='form-control'
+                type="text"
+                
+              />
               </div>
-            </Col>
-            <Row>
-              <Col md={12}>{this.renderInput("subject", "Subject")}</Col>
-            </Row>
-            <Row>
-              <Col>{this.renderTextField("message", "Message")}</Col>
-            </Row>
-            <Row>
-              <div className="col text-center">
-                {this.renderButton("Submit")}
+
+              <div className='form-group'>
+              <label htmlFor="organization_name">Email</label>
+              <input
+                id="organization_name"
+                name="organization_name"
+                className='form-control'
+                type="text"
+                
+              />
               </div>
-            </Row>
-          </Col>
+              <div className='form-group'>
+              <label htmlFor="organization_name">Subject</label>
+              <input
+                id="organization_name"
+                name="organization_name"
+                className='form-control'
+                type="text"
+                
+              />
+              </div>
+              <div className='form-group'>
+              <label htmlFor="organization_name">Message</label>
+              <textarea
+                id="organization_name"
+                name="organization_name"
+                className='form-control'
+                type="text"
+                rows={10}
+                
+              />
+              </div>
+              <button id="btns">SEND MESSAGE</button>
+              </form>
+        </Col>
+         
           <Col md={6}>
             <Map google={this.props.google} />
           </Col>

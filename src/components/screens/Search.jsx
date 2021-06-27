@@ -26,9 +26,14 @@ const Search = () => {
     <div className="container " style={{ marginTop: "50px" }}>
       <Container>
         <div className="form-group">
+        <div className='text-center'>
+          <h2>How can we help?</h2>
+              Explore Tenders - Exactly matching your requirements
+            </div>
           <Row>
+           
             <div
-              className="col-md-6"
+              className="col-md-6 col-xs-12"
               style={{
                 paddingTop: "100px",
                 paddingBottom: "100px",
@@ -37,8 +42,8 @@ const Search = () => {
             >
               <input
                 className="form-control"
-                placeholder="Search by keyword..."
-                style={{ width: "700px" }}
+                placeholder="SEARCH BY KEYWORD..."
+                style={{ width: "700px" , marginLeft:"60px" }}
                 onChange={(e) => {
                   setSearch(e.target.value);
                 }}
@@ -46,7 +51,7 @@ const Search = () => {
             </div>
             <div
               className="col"
-              style={{ paddingTop: "100px", marginLeft: "240px" }}
+              style={{ paddingTop: "100px", marginLeft: "300px" }}
             >
               <Button
                 variant="contained"
@@ -63,7 +68,7 @@ const Search = () => {
 
       {result && (
         <>
-          <h4>Showing Search Result</h4>
+          <h4>Search Results Found: {result.length}</h4>
           <div className="container text-left" style={{ marginTop: "50px" }}>
             {result.map((post) => {
               return (
