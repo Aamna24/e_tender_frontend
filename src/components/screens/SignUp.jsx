@@ -83,7 +83,7 @@ const SignUp = () => {
 
               <div className='row mb-5'>
               <div className="col-md-6">
-                <img src='https://res.cloudinary.com/dexn8tnt9/image/upload/v1624710718/fyp/Portfolio-update_wdiw3i.jpg' alt='signup' 
+                <img src='https://res.cloudinary.com/dkenaghia/image/upload/v1624778067/FYP/Portfolio-update_wdiw3i_lzbego.jpg' alt='signup' 
                 style={{height:"500px",width:"700px"}}/>
               </div>
               <div className="col-md-6 mt-4">

@@ -61,7 +61,8 @@ code {
   font-size: 16px;
 }
 .jumbotron {
-  background-image: url("./pictures/jbt.jpg");
+  
+  background-image: url('https://res.cloudinary.com/dkenaghia/image/upload/v1624778085/FYP/jbt_zvpjkq.jpg');
   background-size: cover;
   min-height: 550px;
 }
@@ -113,7 +114,7 @@ a.makeStyles-link-1:hover {
   margin-bottom: 1rem;
 }
 hr.solid {
-  border-top: 3px solid #16c79a;
+  border-top: 3px solid #050F2F;
 }
 h6.MuiTypography-h6 {
   font-size: 1rem;
@@ -155,9 +156,7 @@ h6.MuiTypography-h6 a:hover {
 }
 
 .card .card-body{
- 
-  
- border-inline: 10px solid #050F2F;
+  border-inline: 10px solid #050F2F;
   
 }
 
@@ -171,37 +170,10 @@ h2.card-title{
 }
 
 
-/*----Side menu----------*/
-/* The side navigation menu */
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
 
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
 
-/* Active/current link */
-.sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
 
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
@@ -264,4 +236,41 @@ div.content {
   color: #f1f1f1;
   border-radius: 1rem;
   padding: 5px 15px 5px 15px;
+}
+
+
+#root > div:nth-child(3) > ul > li.active > a{
+  color: #f1f1f1;
+  background-color: #050F2F;
+  border-color: #050F2F;
+}
+#root > div:nth-child(3) > ul > li.active{
+  background-color: #050F2F;
+}
+
+#root > div:nth-child(3) > ul > li.previous.disabled > a{
+  border-color: #050F2F;
+}
+#root > div:nth-child(3) > ul > li.next.disabled > a{
+  border-color: #050F2F;
+
+}
+
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(3) > div:nth-child(1) > a{
+  color:#050F2F
+}
+
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(3) > div:nth-child(2) > a{
+  color: #050F2F;
+}
+
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(4) > div:nth-child(2) > a{
+  color: #050F2F;
+}
+
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(6) > div:nth-child(1) > div > a{
+  color: #050F2F;
+}
+#primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(6) > div:nth-child(2) > div > a{
+  color: #050F2F;
 }

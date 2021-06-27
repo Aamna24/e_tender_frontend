@@ -41,7 +41,7 @@ const ArchiveTenders = () => {
   useEffect(() => {
     async function getTenderList(){
       let array = filtered.map((e) => e.tenderId);
-      await fetch("http://127.0.0.1:8000/api/publish-tender/").then((response) => {
+      await fetch("https://etender-backend.herokuapp.com/api/publish-tender/").then((response) => {
         response.json().then((listing) => {
           let array2 = listing.filter((e) => array.includes(e.id));
           setArray(array2);

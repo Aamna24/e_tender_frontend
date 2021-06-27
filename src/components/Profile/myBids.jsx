@@ -26,7 +26,7 @@ const MyBids = () => {
   const filtered = bids.filter((x) => x.postedBy === email);
   return (
     <div className="container">
-      <h2 className="text-center mb-5 mt-3">My Bids</h2>
+      <h2 className="text-center mb-5 mt-3">MY BIDS</h2>
 
       {filtered
         .sort((a, b) => b.id - a.id)

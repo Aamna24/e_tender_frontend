@@ -6,7 +6,7 @@ const AboutUs = () => {
         <h2 className="my-3 text-center">ABOUT US</h2>
         <div className='row' style={{padding:"0px 80px 50px 80px", marginTop:"-20px"}}>
           <div className='col-md-6 .d-none .d-sm-block'>
-            <img src='https://res.cloudinary.com/dexn8tnt9/image/upload/v1624708771/fyp/5237_g60pim.jpg' style={{height:"450px",width:"600px"}}/>
+            <img src='https://res.cloudinary.com/dkenaghia/image/upload/v1624778066/FYP/5237_g60pim_q3641l.jpg' style={{height:"450px",width:"600px"}}/>
           </div>
           <div className='col-md-6 mt-5 '>
           <p>

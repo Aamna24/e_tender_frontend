@@ -113,9 +113,10 @@ export default class AllTenders extends Component {
       )}
       {this.state.postData.length!==0 && (
          <div>
-         <h2 className="mb-5 text-center mt-5">Showing All tenders</h2>;
+         <h2 className="mb-5 text-center mt-5">Showing All Tenders</h2>;
          {this.state.postData}
          <ReactPaginate
+         
            previousLabel={"prev"}
            nextLabel={"next"}
            breakLabel={"..."}
