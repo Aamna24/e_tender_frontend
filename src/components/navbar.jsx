@@ -212,7 +212,10 @@ export default function NavBar({ user }) {
           <AppBar position="static" style={{ backgroundColor: "white" }}>
             <Toolbar>
               <Typography className={classes.title} variant="h6" noWrap>
-                <img src="https://res.cloudinary.com/dexn8tnt9/image/upload/v1624609292/fyp/brand_waq2q5.png" alt='logo' style={{width:"12%"}}/>
+                <img src="https://res.cloudinary.com/dkenaghia/image/upload/v1624778051/FYP/brand_waq2q5_rgsen9.png" alt='logo' style={{width:"12%", cursor:'pointer'}}
+                onClick={()=>{
+                  window.location.href="/home"
+                }}/>
               </Typography>
     
               <div className={classes.grow} />

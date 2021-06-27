@@ -96,7 +96,6 @@ class App extends React.Component {
           <Route path="/logout" component={Logout} />
           <Route path="/category/:category" component={FilteredCategory} />
           <Route path="/search" component={Search} />
-          {/*<Route path="/archive" component={ArchivesTenders} />*/}
           <Route path="/archive" component={ArchiveTenders} />
 
 
