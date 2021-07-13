@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import * as auth from "../../services/authServices";
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const MybidDetails = ({ match }) => {
   const id1 = Number(match.params.id);
@@ -27,7 +28,7 @@ const MybidDetails = ({ match }) => {
       {details
         .filter((x) => x.id === id1)
         .map((product, index) => (
-          <div>
+          <div className='mb-5'>
             <h4 className="text-center mb-3" id="bg-title">
               BIDDING DETAILS
             </h4>
@@ -69,10 +70,11 @@ const MybidDetails = ({ match }) => {
                 <h5 id="d-title">File</h5>
               </div>
               <div className="col-md-6">
-                <a href={product.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
+              <a href={product.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
+                  {" "}<GetAppIcon/>
+                  Click here to download Soft Copy{" "}
                 </a>
+           
               </div>
             </div>
           </div>

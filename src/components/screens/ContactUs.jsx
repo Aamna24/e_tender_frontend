@@ -1,75 +1,114 @@
-import React from "react";
-import Form from "../../common/form";
-import { Row, Container, Col } from "react-bootstrap";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import React, { Component } from 'react';
+import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PhoneIcon from '@material-ui/icons/Phone';
+import RoomIcon from '@material-ui/icons/Room';
+import EmailIcon from '@material-ui/icons/Email';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+export default class App extends Component
+{ 
+  
 
-class ContactUs extends Form {
-  render() {
-    return (
-      <Container>
-        <h2 className="text-center mb-5 mt-5">CONTACT US </h2>
-        <Row className='mb-5'>
-        <Col md={6}>
-        <form  >
-                <div className='form-group'>
-              <label htmlFor="organization_name">Name</label>
-              <input
-                id="organization_name"
-                name="organization_name"
-                className='form-control'
-                type="text"
-                
-              />
-              </div>
+  render()
+  {
+  return (
+    <div className="container">
+       <h2 className="my-3 text-center">GET IN TOUCH</h2>
+<div className="row" style={{margin:"50px"}}>
+  <div className="col-4">
+    <div className="container1">
 
-              <div className='form-group'>
-              <label htmlFor="organization_name">Email</label>
-              <input
-                id="organization_name"
-                name="organization_name"
-                className='form-control'
-                type="text"
-                
-              />
-              </div>
-              <div className='form-group'>
-              <label htmlFor="organization_name">Subject</label>
-              <input
-                id="organization_name"
-                name="organization_name"
-                className='form-control'
-                type="text"
-                
-              />
-              </div>
-              <div className='form-group'>
-              <label htmlFor="organization_name">Message</label>
-              <textarea
-                id="organization_name"
-                name="organization_name"
-                className='form-control'
-                type="text"
-                rows={10}
-                
-              />
-              </div>
-              <button id="btns">SEND MESSAGE</button>
-              </form>
-        </Col>
-         
-          <Col md={6}>
-            <Map google={this.props.google} />
-          </Col>
-        </Row>
-      </Container>
-    );
+      <div classname="row">
+        <div>
+    <RoomIcon   style={{ color: "white" ,width:"80px", height:"70px", marginLeft:"58px", marginTop:"30px" }}/>
+    </div>
+
+
+    <div className="text-center mt-2">
+    <p style={{color:'white', fontWeight:'bold'}}  >OUR MAIN OFFICE</p>
+    </div>
+
+
+    <div className="text-center">
+    <p   style={{color:"white"}}>123 johar town</p>
+    </div>
+    
+    
+    
+    </div>
+
+
+    </div>
+  </div>
+
+  <div className="col-4">
+    <div className="container1">
+
+    <div classname="row">
+        <div>
+    <PhoneIcon   style={{ color: "white" ,width:"80px", height:"70px", marginLeft:"58px", marginTop:"30px" }}/>
+    </div>
+
+
+    <div className="text-center mt-2">
+    <p style={{color:'white', fontWeight:'bold'}}  >PHONE NUMBER</p>
+    </div>
+
+
+    <div className="text-center">
+    <p   style={{color:"white"}}>(+92)324-4566316</p>
+    </div>
+    
+    
+    
+    </div>
+
+
+    </div>
+  </div>
+
+  <div className="col-4">
+    <div className="container1">
+
+    <div classname="row">
+        <div>
+    <EmailIcon   style={{ color: "white" ,width:"80px", height:"70px", marginLeft:"58px", marginTop:"30px" }}/>
+    </div>
+
+
+    <div className="text-center mt-2">
+    <p style={{color:'white', fontWeight:'bold'}}  >EMAIL</p>
+    </div>
+
+
+    <div className="text-center">
+    <p   style={{color:"white"}}>maamna24@gmail.com</p>
+    </div>
+    
+    
+    
+    </div>
+
+
+    </div>
+  </div>
+
+
+  
+  
+    
+    </div>
+
+
+
+   
+
+    </div>
+  );
+
   }
+   
 }
 
-/*export default GoogleApiWrapper({
-  apiKey: "AIzaSyB__-V7e-byQzDIhT-Zbl0iSg2St6hP8ZA",
-})(ContactUs);*/
-
-export default GoogleApiWrapper({
-  apiKey: process.env.apiKey,
-})(ContactUs);

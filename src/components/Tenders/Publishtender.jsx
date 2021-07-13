@@ -7,32 +7,32 @@ const validate = values => {
   const errors = {};
 
     if (!values.category) {
-      errors.category = 'Required';
+      errors.category = '* Category is required';
     } 
   
     if (!values.title) {
-      errors.title = 'Required';
+      errors.title = '* Title is required';
     } 
   
     if (!values.region) {
-      errors.region = 'Required';
+      errors.region = '* Region is required';
     } 
     if (!values.description) {
-        errors.description = 'Required';
+        errors.description = '* Description is required';
       } 
       if (!values.contact) {
-        errors.contact = 'Required';
+        errors.contact = '* Contact is required';
       } else if (!/^(\+92)[0-9]{10}$/i.test(values.contact)) {
-        errors.contact = 'Invalid contact format. It should be +92XXXXXXXXXX';
+        errors.contact = '* Invalid contact format. It should be +92XXXXXXXXXX';
       }
       if (!values.last_date) {
-        errors.last_date = 'Required';
+        errors.last_date = '* Last date is required';
       } 
       else {
         const selected = new Date(values.last_date)
         const today = new Date(moment().format('LL'))
          if(selected < today  ){
-         errors.last_date = 'You should select a valid date'
+         errors.last_date = '* You should select a valid date'
        }
        
       }
@@ -262,7 +262,7 @@ const PublishTender = () => {
                 name="file_uploaded"
                 type="file"
                 className='form-control'
-               
+               required
                 onChange={(e)=>{
                   setFile(e.currentTarget.files[0])
                 }}

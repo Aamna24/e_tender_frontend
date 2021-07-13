@@ -44,6 +44,8 @@ import EmailVerify from './components/Profile/EmailVerify';
 
 import AdminHome from './Admin/adminHome';
 
+import Loaders from './Loader';
+
 
 class App extends React.Component {
   constructor(props){
@@ -115,7 +117,7 @@ class App extends React.Component {
 
         <Route path="/admin" component={AdminHome}/>
 
-          
+        <Route path="/loader" component={Loaders}/>
           <Redirect from="/" exact to="/home" />
          
            

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as auth from "../services/authServices";
 import Button from "@material-ui/core/Button";
-
+import GetAppIcon from '@material-ui/icons/GetApp';
+import moment from 'moment'
 const FilteredCategory = ({ match }) => {
   const [tenders, setTenders] = useState([]);
 
@@ -20,30 +21,31 @@ const FilteredCategory = ({ match }) => {
     getData()
   }, [])
   const filter = tenders.filter((x) => x.category === match.params.category)
-  //const filter = tenders.filter(item => item.category.includes(match.params.category));
-  console.log("c",match.params.category)
-  console.log("f",filter)
-  if(filter.length===0 || !filter.length) return (
+  const result = filter.filter(
+    (x) => x.last_date > moment().format().split("T")[0]
+  )
+  if(result.length===0 || !result.length) return (
     <React.Fragment>
-      <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No tenders available</h2>
+      <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No Tenders Available</h2>
     </React.Fragment>
   )
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
+      <h2 className='mb-5'>CATEGORY: {match.params.category}</h2>
       {tenders
-        .filter((x) => x.category === match.params.category)
+        .filter((x) => x.category === match.params.category && x.last_date> moment().format().split("T")[0])
         .map((post) => {
           return (
             <div class="card mb-5">
               <div class="card-body">
-                <h5 class="card-title">{post.organization_name}</h5>
-
-                <p class="card-text">Sector: {post.category}</p>
-                <p class="card-text">Description: {post.description}</p>
-                <p class="card-text">Action Deadline: {post.last_date}</p>
-                <a href={post.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
+              <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
+              <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
+                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
+                <p class="card-text" style={{color:"black"}}>Description: {post.description}</p>
+                <p class="card-text" style={{color:"black"}}>Action Deadline: {post.last_date}</p>
+                <a href={post.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
+                  {" "}<GetAppIcon/>
+                  Click here to download Soft Copy{" "}
                 </a>
                 <br />
                 <br />
@@ -60,9 +62,7 @@ const FilteredCategory = ({ match }) => {
           );
         })}
 
-     {/* <Button id="btns" href="/tenders">
-        View More
-      </Button>*/}
+    
     </div>
   );
 };
