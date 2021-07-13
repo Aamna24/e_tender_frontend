@@ -5,7 +5,6 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import DeleteIcon from '@material-ui/icons/Delete';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import CancelIcon from '@material-ui/icons/Cancel';
-import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
 import HistoryIcon from '@material-ui/icons/History';
 const MyBids = () => {
   const email = localStorage.getItem("organization");

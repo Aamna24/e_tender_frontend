@@ -4,10 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PhoneIcon from '@material-ui/icons/Phone';
 import RoomIcon from '@material-ui/icons/Room';
 import EmailIcon from '@material-ui/icons/Email';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-export default class App extends Component
+
+export default class ContactUs extends Component
 { 
   
 
