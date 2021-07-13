@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as auth from "../../services/authServices";
 import Button from "@material-ui/core/Button";
 import GetAppIcon from '@material-ui/icons/GetApp';
-
+import DeleteIcon from '@material-ui/icons/Delete';
 const MyTenders = () => {
   const email = localStorage.getItem("organization");
 
@@ -24,6 +24,12 @@ const MyTenders = () => {
     getData()
   }, [])
   const filtered = tenders.filter((x) => x.organization_name === email);
+  if (!filtered || filtered.length === 0)
+  return (
+    <React.Fragment>
+      <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No Tenders available</h2>
+    </React.Fragment>
+  );
   return (
     <div className="container">
       <h2 className="text-center mb-5 mt-3">My Tenders</h2>
@@ -35,10 +41,12 @@ const MyTenders = () => {
               <div class="card-body">
                 
                   <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
+
                 <p class="card-text" style={{color:"black"}}>Sector: {post.category}</p>
+
                 <p class="card-text"style={{color:"black"}}>Description: {post.description}</p>
                 <p class="card-text" style={{color:"black"}}>Action Deadline: {post.last_date}</p>
-              
+
 
                 <a href={post.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
                   {" "}<GetAppIcon/>
@@ -80,6 +88,7 @@ const MyTenders = () => {
                   }}
                   
                 >
+                  <DeleteIcon/>
                   Delete Tender
                 </Button>
                 </div>

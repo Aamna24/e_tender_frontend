@@ -274,3 +274,43 @@ div.content {
 #primary-search-account-menu > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > div > div > div:nth-child(6) > div:nth-child(2) > div > a{
   color: #050F2F;
 }
+
+/*-----------------------*/
+
+#r2{
+  background-color:#D8D8D8
+}
+#r1
+{
+  background-color:#E6E6E6;
+}
+#r3{
+  background-color: #F2F2F2;
+}
+
+.container1
+{
+height:205px;
+width: 205px;
+background-color:#050f2f;
+margin-top: 30px;
+margin-left: 50px;
+margin-right: 50px;
+
+
+}
+
+
+.text
+{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+
+.outter
+{
+  display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+}

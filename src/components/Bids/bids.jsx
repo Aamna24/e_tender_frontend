@@ -26,12 +26,9 @@ const SearchBids = () => {
 
   if (!result || result.length === 0)
     return (
-      <h4
-        className="text-center"
-        style={{ marginTop: "100px", marginBottom: "100px" }}
-      >
-        No Bids to show
-      </h4>
+      <React.Fragment>
+        <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No Bids available</h2>
+      </React.Fragment>
     );
   return (
     <div className="container " style={{ marginTop: "50px" }}>

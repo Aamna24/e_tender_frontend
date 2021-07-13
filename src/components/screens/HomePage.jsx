@@ -64,7 +64,7 @@ const HomePage = () => {
       </div>
       <br />
       <br />
-      <div className="container text-center solid ">
+      <div className="container text-center solid mb-5 ">
         <h2 style={{ marginTop: "18px" }}>LATEST TENDERS</h2>
         <LatestTenders />
         <br />

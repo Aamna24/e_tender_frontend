@@ -5,6 +5,7 @@ import TextField from "./textfield";
 import DropDown from "./dropdownCategory";
 import Dropdown from "./dropdownStatus";
 import AutoInput from "./autoInput";
+
 class Form extends Component {
   state = {
     data: {},
@@ -19,6 +20,7 @@ class Form extends Component {
     for (let item of error.details) errors[item.path[0]] = item.message;
     return errors;
   };
+  
   validateProperty = ({ name, value }) => {
     const obj = { [name]: value };
     const schema = { [name]: this.schema[name] };
