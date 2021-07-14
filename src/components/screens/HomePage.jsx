@@ -4,13 +4,17 @@ import Button from "@material-ui/core/Button";
 import CategoriesCard from "../CategoriesCards";
 import LatestTenders from "../Tenders/latestTenders";
 import LaunchIcon from '@material-ui/icons/Launch';
+import * as auth from '../../services/authServices'
+import { AtmSharp } from "@material-ui/icons";
 
 const HomePage = () => {
   return (
     <div>
       <div className="jumbotron">
 
-        <button onClick={() => {
+        {!auth.getCurrentUser() && (
+          <>
+          <button onClick={() => {
           window.location.href = "/register"
         }} style={{
           backgroundColor: "white", display: "inline-block", color: "black",
@@ -18,6 +22,8 @@ const HomePage = () => {
           cursor: "pointer", border: "1px solid", whiteSpace: "nowrap", lineHeight: "1.42", borderRadius: "3px", padding: "10px 33px",
           float: "right", fontSize: "22px", marginTop: "15%", marginRight: "5%"
         }}><LaunchIcon style={{ marginRight: "7px", marginBottom: "2px" }} />Create Account</button>
+          </>
+        )}
       </div>
       <div className="row ">
         <div className="col-md-6 col-xs-12 text-center">
