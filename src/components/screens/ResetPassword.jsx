@@ -41,7 +41,7 @@ const ResetPassword = ({ match }) => {
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <button type="submit">Reset Password</button>
+            <button className="mb-5" type="submit">Reset Password</button>
 
           </Form>
         </>
@@ -55,7 +55,7 @@ const ResetPassword = ({ match }) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => {
+          <Button variant="primary" style={{ backgroundColor: '#cc3c34', color:"white" }} onClick={() => {
             window.location.href = "/login"
           }}>
             Login
