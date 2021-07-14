@@ -9,12 +9,15 @@ const HomePage = () => {
   return (
     <div>
       <div className="jumbotron">
-        <button onClick={()=>{
-          window.location.href="/register"
-        }} style={{backgroundColor:"white", display:"inline-block",color:"black",
-      textAlign:"center",marginBottom:0,verticalAlign:"middle",touchAction:"manipulation",
-      cursor:"pointer",border:"1px solid",whiteSpace:"nowrap",lineHeight:"1.42",borderRadius:"3px",padding:"10px 33px",
-      float:"right",fontSize:"22px",marginTop:"15%",marginRight:"5%"}}><LaunchIcon style={{marginRight:"7px",marginBottom:"2px"}}/>Create Account</button>
+
+        <button onClick={() => {
+          window.location.href = "/register"
+        }} style={{
+          backgroundColor: "white", display: "inline-block", color: "black",
+          textAlign: "center", marginBottom: 0, verticalAlign: "middle", touchAction: "manipulation",
+          cursor: "pointer", border: "1px solid", whiteSpace: "nowrap", lineHeight: "1.42", borderRadius: "3px", padding: "10px 33px",
+          float: "right", fontSize: "22px", marginTop: "15%", marginRight: "5%"
+        }}><LaunchIcon style={{ marginRight: "7px", marginBottom: "2px" }} />Create Account</button>
       </div>
       <div className="row ">
         <div className="col-md-6 col-xs-12 text-center">
@@ -26,15 +29,17 @@ const HomePage = () => {
               color: "white",
               paddingLeft: "30%",
               paddingRight: "30%",
-              marginLeft:"10%",
-              wordSpacing:'7px',
-              letterSpacing:"2px"
+              marginLeft: "10%",
+              wordSpacing: '7px',
+              letterSpacing: "2px"
             }}
             component={Link}
             to="/search"
           >
             Search For Tenders
           </Button>
+
+
         </div>
         <div className="col-md-6 text-center col-xs-12">
           <Button
@@ -47,9 +52,9 @@ const HomePage = () => {
               color: "white",
               paddingLeft: "30%",
               paddingRight: "30%",
-              marginRight:"10%",
-              wordSpacing:'7px',
-              letterSpacing:"2px"
+              marginRight: "10%",
+              wordSpacing: '7px',
+              letterSpacing: "2px"
             }}
           >
             View All Tenders
@@ -69,7 +74,7 @@ const HomePage = () => {
         <LatestTenders />
         <br />
       </div>
-      
+
     </div>
   );
 };

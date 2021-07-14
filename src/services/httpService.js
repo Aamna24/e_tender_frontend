@@ -12,7 +12,7 @@ axios.interceptors.response.use(null, error => {
         error.response.status < 500;
 
     if (!expectedError) {
-      
+
         toast.error("An unexpected error occured")
     }
     return Promise.reject(error);

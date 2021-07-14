@@ -1,5 +1,5 @@
-import React  from 'react';
-import { Switch,Route, Redirect} from 'react-router-dom';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,42 +42,41 @@ import Editprofile from './components/Profile/Editprofile';
 import EmailVerify from './components/Profile/EmailVerify';
 
 
-import AdminHome from './Admin/adminHome';
 
 import Loaders from './Loader';
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={apiResponse: ""}
+    this.state = { apiResponse: "" }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const user = auth.getCurrentUser();
-    this.setState({user})
-    
+    this.setState({ user })
+
   }
 
-  callAPI(){
-    fetch(process.env.REACT_APP_API_URL+"/api/")
-    .then(console.log("app connected"))
-    .then(res=> this.setState({apiResponse: res}));
+  callAPI() {
+    fetch(process.env.REACT_APP_API_URL + "/api/")
+      .then(console.log("app connected"))
+      .then(res => this.setState({ apiResponse: res }));
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.callAPI();
   }
-  render(){
-    const {user} = this.state;
-    return(
-     
+  render() {
+    const { user } = this.state;
+    return (
+
       <React.Fragment>
-         <ToastContainer/>
-     
-      <Navigation user={user}/>
-      
-        
+        <ToastContainer />
+
+        <Navigation user={user} />
+
+
         <Switch>
           <Route path="/aboutus" component={AboutUs} />
           <Route path="/login" component={Login} />
@@ -88,10 +87,10 @@ class App extends React.Component {
           <Route path="/faq" component={FAQ} />
 
           <Route path="/register" component={SignUp} />
-          <Route path="/email-verify" component={EmailVerify}/>
-        <Route path="/msg" component={Msg}/>
-        <Route path="/request-reset-email" component={ResetPasswordEmail}/>
-        <Route path="/password-reset/:uidb64/:token/" component={ResetPassword}/>
+          <Route path="/email-verify" component={EmailVerify} />
+          <Route path="/msg" component={Msg} />
+          <Route path="/request-reset-email" component={ResetPasswordEmail} />
+          <Route path="/password-reset/:uidb64/:token/" component={ResetPassword} />
           <Route path="/terms" component={Terms} />
           <Route path="/tenders" component={AllTenders} />
           <Route path="/home" component={HomePage} />
@@ -111,24 +110,23 @@ class App extends React.Component {
           <Route path="/my-bids" component={MyBids} />
           <Route path="/viewbids" component={SearchBids} />
           <Route path="/bid-details/:id/:tenderId" component={BidDetails} />
-        <Route path="/mybid-details/:id" component={MybidDetails}/>
-        <Route path="/mytenders-details/:id" component={MyTenderDetails}/>
-        
+          <Route path="/mybid-details/:id" component={MybidDetails} />
+          <Route path="/mytenders-details/:id" component={MyTenderDetails} />
 
-        <Route path="/admin" component={AdminHome}/>
 
-        <Route path="/loader" component={Loaders}/>
+
+          <Route path="/loader" component={Loaders} />
           <Redirect from="/" exact to="/home" />
-         
-           
+
+
         </Switch>
-       
-        
-     
-      <Footer />
+
+
+
+        <Footer />
 
       </React.Fragment>
-     
+
     );
   }
 }

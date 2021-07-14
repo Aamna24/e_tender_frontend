@@ -15,7 +15,7 @@ export default class AllTenders extends Component {
       data: [],
       perPage: 10,
       currentPage: 1,
-      postData:[]
+      postData: []
     };
     this.handlePageClick = this.handlePageClick.bind(this);
   }
@@ -25,12 +25,12 @@ export default class AllTenders extends Component {
       const filter = data.filter(
         (x) => x.last_date > moment().format().split("T")[0]
       );
-      const slice = filter.slice(
+      const slice = filter.filter(x => x.availibility === "Active").slice(
         this.state.offset,
         this.state.offset + this.state.perPage
       );
 
-       this.state.postData = slice
+      this.state.postData = slice
         .sort((a, b) => b.id - a.id)
         .map((post) => (
           <React.Fragment>
@@ -40,38 +40,38 @@ export default class AllTenders extends Component {
               style={{ marginTop: "15px" }}
             >
               <div className="card" style={{ marginBottom: "15px" }}>
-              <div className="card mb-5">
-              <div className="card-body">
-                <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
-                <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
-                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
-                <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
-                <p className="card-text" style={{color:"black"}}>Region: {post.region}</p>
+                <div className="card mb-5">
+                  <div className="card-body">
+                    <h4 className="card-title text-center" style={{ backgroundColor: "#050F2F", color: "white", paddingTop: "4px", paddingBottom: "4px" }} >Title: {post.title}</h4>
+                    <p className="card-text " style={{ float: "right", color: "black" }}>Posted By: {post.organization_name}</p>
+                    <p className="card-text " style={{ color: "black" }}>Sector: {post.category}</p>
+                    <p className="card-text" style={{ color: "black" }}>Description: {post.description}</p>
+                    <p className="card-text" style={{ color: "black" }}>Region: {post.region}</p>
 
-                <div className="row" >
-                  <div className="col-md-6">
-                  <p style={{color:"red", fontWeight:"bold",fontSize:"20px"}} >
-                  {" "}
-                  Bidding ends in: <Countdown date={post.last_date} />
-                </p>
+                    <div className="row" >
+                      <div className="col-md-6">
+                        <p style={{ color: "red", fontWeight: "bold", fontSize: "20px" }} >
+                          {" "}
+                          Bidding ends in: <Countdown date={post.last_date} />
+                        </p>
+                      </div>
+                      <div className="col">
+                        <Button
+                          id="btns"
+                          style={{ float: "right" }}
+                          onClick={(e) => {
+                            window.location.href = "/details/" + post.id;
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      </div>
+
+
+
                     </div>
-                  <div className="col">
-                  <Button
-                  id="btns"
-                  style={{float:"right"}}
-                  onClick={(e) => {
-                    window.location.href = "/details/" + post.id;
-                  }}
-                >
-                  View Details
-                </Button>
-                    </div>
-               
-            
-               
+                  </div>
                 </div>
-              </div>
-            </div>
               </div>
             </Container>
           </React.Fragment>
@@ -104,36 +104,36 @@ export default class AllTenders extends Component {
   }
   render() {
     return (
-      
+
       <>
-      {this.state.postData.length===0 && (
-        <React.Fragment>
-        <h2 style={{display: 'flex', justifyContent: 'center',alignItems:'center', marginTop:"200px",marginBottom:"200px"}}>No Tenders available</h2>
-      </React.Fragment>
-      )}
-      {this.state.postData.length!==0 && (
-         <div>
-         <h2 className="mb-5 text-center mt-5">Showing All Tenders</h2>;
-         {this.state.postData}
-         <ReactPaginate
-         
-           previousLabel={"prev"}
-           nextLabel={"next"}
-           breakLabel={"..."}
-           breakClassName={"break-me"}
-           pageCount={this.state.pageCount}
-           marginPagesDisplayed={2}
-           pageRangeDisplayed={5}
-           onPageChange={this.handlePageClick}
-           containerClassName={"pagination"}
-           subContainerClassName={"pages pagination"}
-           activeClassName={"active"}
-         />
-       </div>
-       
-      )}
+        {this.state.postData.length === 0 && (
+          <React.Fragment>
+            <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: "200px", marginBottom: "200px" }}>No Tenders available</h2>
+          </React.Fragment>
+        )}
+        {this.state.postData.length !== 0 && (
+          <div>
+            <h2 className="mb-5 text-center mt-5">Showing All Tenders</h2>;
+            {this.state.postData}
+            <ReactPaginate
+
+              previousLabel={"prev"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={this.state.pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={this.handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
+            />
+          </div>
+
+        )}
       </>
-       
+
     );
   }
 }

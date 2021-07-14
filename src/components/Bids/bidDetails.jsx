@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import * as auth from "../../services/authServices";
 import { toast } from "react-toastify";
+import GetAppIcon from '@material-ui/icons/GetApp';
+
 toast.configure();
 const BidDetails = ({ match }) => {
   const id1 = Number(match.params.id);
@@ -33,12 +35,13 @@ const BidDetails = ({ match }) => {
       const id = filterBids[i].id;
       await auth.rejectBids(id, "Rejected");
     }
-    await auth.updateTender(match.params.tenderId, organization);
+    await auth.updateTender(match.params.tenderId, organization, "Inactive");
   };
 
   const approveBid = async (id, tenderId) => {
     const status = "Approved";
     const res = await auth.approveBids(id, status);
+
     if (res.status === 200) {
       toast.success("This bid has been approved");
       setTimeout(() => {
@@ -87,20 +90,26 @@ const BidDetails = ({ match }) => {
                 <h5 id="d-title">File</h5>
               </div>
               <div className="col-md-6">
-                <a href={product.file_uploaded} download="My_File.pdf">
-                  {" "}
-                  Soft Copy{" "}
+                <a href={product.file_uploaded} download="My_File.pdf" style={{ color: "#cc3c34", fontFamily: "bold" }}>
+                  {" "}<GetAppIcon />
+                  Click here to download Soft Copy{" "}
                 </a>
               </div>
             </div>
 
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => approveBid(product.id, product.tenderId)}
-            >
-              Approve Bid
-            </Button>
+            <div style={{ textAlign: 'end' }} className='mb-5 mt-4'>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => approveBid(product.id, product.tenderId)}
+                style={{ backgroundColor: '#cc3c34' }}
+
+              >
+                Approve Bid
+              </Button>
+            </div>
+
+
           </div>
         ))}
     </div>

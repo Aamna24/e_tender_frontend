@@ -27,7 +27,7 @@ const Categoriescards = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -138,7 +138,7 @@ const Categoriescards = () => {
         </div>
       </div>
       <div className="text-center mt-5">
-        <Button href="/all-categories"><VisibilityIcon className='mr-1'/>View More</Button>
+        <Button href="/all-categories"><VisibilityIcon className='mr-1' />View More</Button>
       </div>
     </div>
   );

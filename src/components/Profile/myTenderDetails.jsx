@@ -4,18 +4,18 @@ import * as auth from "../../services/authServices";
 const MyTenderDetails = ({ match }) => {
   const id = Number(match.params.id);
   const [details, setDetails] = useState([]);
-  
+
 
   useEffect(() => {
     async function getData() {
       await auth
-      .getTenders()
-      .then((res) => {
-        setDetails(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .getTenders()
+        .then((res) => {
+          setDetails(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
     getData()
   }, [])

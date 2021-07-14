@@ -11,18 +11,18 @@ const MyBids = () => {
 
   const [bids, setBids] = useState([]);
 
-  
+
 
   useEffect(() => {
     async function getData() {
       auth
-      .getBids()
-      .then((res) => {
-        setBids(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .getBids()
+        .then((res) => {
+          setBids(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
     getData()
   }, [])
@@ -37,28 +37,28 @@ const MyBids = () => {
           return (
             <div class="card mb-5">
               <div class="card-body">
-              <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
-              {post.status === "Approved" && (
+                <h4 className="card-title text-center" style={{ backgroundColor: "#050F2F", color: "white", paddingTop: "4px", paddingBottom: "4px" }} >Title: {post.title}</h4>
+                {post.status === "Approved" && (
                   <p class="card-text">
-                  <p class="card-text" style={{color:"green",float:'right'}}><DoneAllIcon/> {post.status}</p>
+                    <p class="card-text" style={{ color: "green", float: 'right' }}><DoneAllIcon /> {post.status}</p>
                   </p>
                 )}
-                 {post.status === "Rejected" && (
-                  <p class="card-text" style={{color:"red",float:'right'}}><CancelIcon/> {post.status}</p>
+                {post.status === "Rejected" && (
+                  <p class="card-text" style={{ color: "red", float: 'right' }}><CancelIcon /> {post.status}</p>
 
                 )}
                 {post.status === "Under Review" && (
-                  <p class="card-text" style={{color:"blue",float:'right'}}><HistoryIcon/> {post.status}</p>
+                  <p class="card-text" style={{ color: "blue", float: 'right' }}><HistoryIcon /> {post.status}</p>
 
                 )}
-                <p class="card-text" style={{color:"black"}}>Tender ID: {post.tenderId}</p>
+                <p class="card-text" style={{ color: "black" }}>Tender ID: {post.tenderId}</p>
 
-                <p class="card-text" style={{color:"black"}}>Bidding Amount: {post.bidding_amount}</p>
-                
-               
+                <p class="card-text" style={{ color: "black" }}>Bidding Amount: {post.bidding_amount}</p>
 
-<a href={post.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
-                  {" "}<GetAppIcon/>
+
+
+                <a href={post.file_uploaded} download="My_File.pdf" style={{ color: "#cc3c34", fontFamily: "bold" }}>
+                  {" "}<GetAppIcon />
                   Click here to download Soft Copy{" "}
                 </a>
                 <br />
@@ -72,20 +72,20 @@ const MyBids = () => {
                 >
                   View Details
                 </Button>
-                <div style={{textAlign:"end", marginTop:"-35px"}}>
-                <Button
-                  id="btns"
-                  style={{backgroundColor:"red", marginLeft:"5px"}}
-                  onClick={(e) => {
-                    auth.deleteBid(post.id);
-                    window.location.reload();
-                  }}
-                >
-                  <DeleteIcon/>
+                <div style={{ textAlign: "end", marginTop: "-35px" }}>
+                  <Button
+                    id="btns"
+                    style={{ backgroundColor: "red", marginLeft: "5px" }}
+                    onClick={(e) => {
+                      auth.deleteBid(post.id);
+                      window.location.reload();
+                    }}
+                  >
+                    <DeleteIcon />
 
-                  Delete Bid
-                </Button>
-                  </div>
+                    Delete Bid
+                  </Button>
+                </div>
               </div>
             </div>
           );
