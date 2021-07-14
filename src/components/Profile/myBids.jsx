@@ -53,7 +53,7 @@ const MyBids = () => {
                 )}
                 <p class="card-text" style={{ color: "black" }}>Tender ID: {post.tenderId}</p>
 
-                <p class="card-text" style={{ color: "black" }}>Bidding Amount: {post.bidding_amount}</p>
+                <p class="card-text" style={{ color: "black" }}>Bidding Amount: Rs {post.bidding_amount}</p>
 
 
 

@@ -62,7 +62,6 @@ const PlaceBid = ({ match }) => {
         const res = await auth.postBid(data)
         setLoading(true)
         if (res.status === 201) {
-          // toast.success("Bids placed");
           setLoading(false)
           window.location.href = "/my-bids";
         }
