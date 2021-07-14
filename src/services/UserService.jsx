@@ -1,7 +1,7 @@
 import GenericServices from "./GenericServices";
 
 class UserServices extends GenericServices {
- 
+
 
   register = (organization_name, password, email, ntn, contact, address) =>
     this.post("/api/register/", {

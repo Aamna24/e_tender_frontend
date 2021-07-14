@@ -18,8 +18,7 @@ import authServices from "../services/authServices";
 
 const useStyles = makeStyles((theme) => ({
   link: {
-    //color: "white",
-    color:"black",
+    color: "black",
     paddingRight: "14px",
     flexGrow: 1,
     marginTop: "50px",
@@ -123,7 +122,7 @@ export default function NavBar({ user }) {
                 My Bids
               </Link>
             </div>
-            
+
           </div>
 
           <div className='row mb-2 '>
@@ -131,7 +130,7 @@ export default function NavBar({ user }) {
 
             </div>
             <div classname='col-md-3' >
-            <Link to="/archive" onClick={handleMenuClose}>
+              <Link to="/archive" onClick={handleMenuClose}>
                 <ArchiveIcon />
                 <br />
                 Archive Tenders
@@ -141,7 +140,7 @@ export default function NavBar({ user }) {
 
             </div>
           </div>
-          
+
           <hr className="solid"></hr>
 
           <div className="row">
@@ -206,18 +205,18 @@ export default function NavBar({ user }) {
   );
 
   return (
-      <>
-      {user!=='admin' && (
-          <div className={classes.grow}>
+    <>
+      {user !== 'admin' && (
+        <div className={classes.grow}>
           <AppBar position="static" style={{ backgroundColor: "white" }}>
             <Toolbar>
               <Typography className={classes.title} variant="h6" noWrap>
-                <img src="https://res.cloudinary.com/dkenaghia/image/upload/v1624778051/FYP/brand_waq2q5_rgsen9.png" alt='logo' style={{width:"12%", cursor:'pointer'}}
-                onClick={()=>{
-                  window.location.href="/home"
-                }}/>
+                <img src="https://res.cloudinary.com/dkenaghia/image/upload/v1624778051/FYP/brand_waq2q5_rgsen9.png" alt='logo' style={{ width: "12%", cursor: 'pointer' }}
+                  onClick={() => {
+                    window.location.href = "/home"
+                  }} />
               </Typography>
-    
+
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <Typography variant="h6" className={classes.title}>
@@ -238,13 +237,13 @@ export default function NavBar({ user }) {
                 <Typography variant="h6">
                   {!authServices.getCurrentUser() && (
                     <Link to="/login" className={classes.link}>
-                    PUBLISH TENDER
-                  </Link>
+                      PUBLISH TENDER
+                    </Link>
                   )}
                   {authServices.getCurrentUser() && (
                     <Link to="/publish" className={classes.link}>
-                    PUBLISH TENDER
-                  </Link>
+                      PUBLISH TENDER
+                    </Link>
                   )}
                 </Typography>
                 <Typography variant="h6">
@@ -268,7 +267,7 @@ export default function NavBar({ user }) {
                     </div>
                   </div>
                 )}
-    
+
                 {user && (
                   <div>
                     {" "}
@@ -280,7 +279,7 @@ export default function NavBar({ user }) {
                       onClick={handleProfileMenuOpen}
                       color="inherit"
                     >
-                      <AccountCircle style={{fill:"black"}} />
+                      <AccountCircle style={{ fill: "black" }} />
                     </IconButton>
                   </div>
                 )}
@@ -305,6 +304,6 @@ export default function NavBar({ user }) {
           {renderMenu}
         </div>
       )}
-      </>
+    </>
   );
 }

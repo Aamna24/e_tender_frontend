@@ -23,12 +23,12 @@ class Login extends Form {
     try {
       const { data } = this.state;
       await auth.login(data.username, data.password);
-      if(localStorage.getItem('organization')!=='admin'){
+      if (localStorage.getItem('organization') !== 'admin') {
         window.location = "/home";
       }
-      else{
+      else {
         //window.location.href='/admin'
-        window.location.href='https://etender-backend.herokuapp.com/admin/'
+        window.location.href = 'https://etender-backend.herokuapp.com/admin/'
 
       }
     } catch (ex) {
@@ -57,10 +57,10 @@ class Login extends Form {
           </form>
         </div>
         <p className="container mx-auto text-center mt-5">
-          Don't have an account?<Link to="/register" className='ml-1' style={{color:"#050F2F",fontWeight:"500"}}>Sign Up</Link>
+          Don't have an account?<Link to="/register" className='ml-1' style={{ color: "#050F2F", fontWeight: "500" }}>Sign Up</Link>
         </p>
         <p className="container mx-auto text-center ">
-          <Link to="/request-reset-email" style={{color:"#050F2F",fontWeight:"500",}}>Forgot Password?</Link>
+          <Link to="/request-reset-email" style={{ color: "#050F2F", fontWeight: "500", }}>Forgot Password?</Link>
         </p>
       </div>
     );

@@ -7,24 +7,24 @@ const ArchiveTenders = () => {
 
   const [bids, setBids] = useState([]);
   const [farray, setArray] = useState([]);
- 
+
   useEffect(() => {
     async function fetchData() {
-      
-      await  auth
-      .getBids()
-      .then((res) => {
-        setBids(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });;
-      
+
+      await auth
+        .getBids()
+        .then((res) => {
+          setBids(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });;
+
     }
     fetchData();
   }, []);
   const filtered = bids.filter((x) => x.postedBy === organization_name);
-  
+
   /*const getTenderList = async () => {
 
    let array = filtered.map((e) => e.tenderId);
@@ -39,7 +39,7 @@ const ArchiveTenders = () => {
   React.useEffect(getTenderList, []);  */
 
   useEffect(() => {
-    async function getTenderList(){
+    async function getTenderList() {
       let array = filtered.map((e) => e.tenderId);
       await fetch("https://etender-backend.herokuapp.com/api/publish-tender/").then((response) => {
         response.json().then((listing) => {
@@ -60,12 +60,12 @@ const ArchiveTenders = () => {
         return (
           <div class="card mb-5">
             <div class="card-body">
-            <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
-            <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
-                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
-                <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
-                <p className="card-text" style={{color:"black"}}>Action Deadline: {post.last_date}</p>
-              
+              <h4 className="card-title text-center" style={{ backgroundColor: "#050F2F", color: "white", paddingTop: "4px", paddingBottom: "4px" }} >Title: {post.title}</h4>
+              <p className="card-text " style={{ float: "right", color: "black" }}>Posted By: {post.organization_name}</p>
+              <p className="card-text " style={{ color: "black" }}>Sector: {post.category}</p>
+              <p className="card-text" style={{ color: "black" }}>Description: {post.description}</p>
+              <p className="card-text" style={{ color: "black" }}>Action Deadline: {post.last_date}</p>
+
               <br />
               <br />
               <Button

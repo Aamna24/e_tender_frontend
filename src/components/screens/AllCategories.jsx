@@ -9,7 +9,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625045/FYP/doctor-with-stethoscope-hands-hospital-background_cdexs9.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279056/FYP%20Pics/MEDICAL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -25,7 +25,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -35,7 +35,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625252/FYP/construction-silhouette_eui0mi.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/CONSTRUCTION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -56,7 +56,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625802/FYP/93472_uj4gzx.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279047/FYP%20Pics/IT.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -80,7 +80,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625867/FYP/12012_ftcbda.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279059/FYP%20Pics/OIL%20AND%20GAS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -100,7 +100,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625954/FYP/high-voltage-post-high-voltage-tower_uxzt2s.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/ELECTRICAL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -120,7 +120,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626060/FYP/23175_bnnk5e.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279047/FYP%20Pics/TELLECOMMUNIATION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -136,14 +136,14 @@ const AllCategories = () => {
           </a>
         </div>
       </div>
-            {      /*third row*/}
+      {      /*third row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Agriculture, Food and Beverages">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626688/FYP/agriculture-food-production-concept-with-tractor-machine-silos-irrigation-system-3_gnzgmb.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279048/FYP%20Pics/AGRICULTURE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -159,7 +159,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -168,7 +168,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626811/FYP/hong-kong-apartment-block_uxbber.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279060/FYP%20Pics/ARCHITECTURE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -184,7 +184,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -193,7 +193,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626906/FYP/29019_chwwkp.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279047/FYP%20Pics/AUTOMOBILE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -209,7 +209,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -217,12 +217,12 @@ const AllCategories = () => {
 
       {/*fourth row */}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Aviation">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624627037/FYP/airport-terminal_kywezo.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279052/FYP%20Pics/AVIATION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -238,7 +238,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -247,7 +247,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624627338/FYP/architecture_k7fdns.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279055/FYP%20Pics/BRIDGES.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -263,7 +263,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -272,7 +272,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624627647/FYP/michal-matlon-RCmIOVHUBac-unsplash_qhmqtx.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279062/FYP%20Pics/DEFENCE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -288,19 +288,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*5 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Fire, safety and security">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628032/FYP/john-torcasio-JY1KFwXgQiw-unsplash_q9sp06.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279058/FYP%20Pics/FIRE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -316,7 +316,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -325,7 +325,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628179/FYP/textiles-sale_xmwzer.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626280142/FYP%20Pics/textile.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -341,7 +341,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -350,7 +350,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628317/FYP/high-angle-shot-gavel-scale-wooden-surface_gofjvs.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279056/FYP%20Pics/LAW.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -366,19 +366,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*6 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Machinery and Equipments">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628540/FYP/close-up-construction-site-excavator_icpx4p.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/MACHINERY.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -394,7 +394,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -403,7 +403,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628702/FYP/the-blowup-S32zqWHnYwk-unsplash_okzekq.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279064/FYP%20Pics/METALS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -419,7 +419,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -428,7 +428,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628853/FYP/albert-hyseni-Sy_8KuxLwBI-unsplash_riuymx.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279051/FYP%20Pics/MINERALS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -444,7 +444,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -452,12 +452,12 @@ const AllCategories = () => {
 
       {      /*7 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Non-Renewable Energy">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629085/FYP/close-up-burning-bonfire-forest-picnic_fde5x0.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/NON-RENEWABLE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -473,7 +473,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -482,7 +482,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629336/FYP/packings-pills-capsules-medicines_pngyn1.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279066/FYP%20Pics/Pharmasutical.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -498,7 +498,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -507,7 +507,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629403/FYP/shot-electric-train-railway_pkvmpa.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279067/FYP%20Pics/Railways.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -523,19 +523,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*8 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Renewable Energy">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629481/FYP/sunny-landscape-with-windmills_pp5ovm.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279064/FYP%20Pics/RENEWABLE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -551,7 +551,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -560,7 +560,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629602/FYP/joyce-wu-9Tz6W8-Pyjw-unsplash_iwy5zf.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279059/FYP%20Pics/ROADWAYS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -576,7 +576,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -585,7 +585,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629669/FYP/cctv-security-camera_xmjmbg.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279056/FYP%20Pics/SECURITY.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -601,19 +601,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*8 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Transportation">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629978/FYP/aerial-view-container-cargo-ship-sea_canmle.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279050/FYP%20Pics/TRANSPORTATION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -629,7 +629,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -638,7 +638,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624630322/FYP/box8_xodhdr.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279053/FYP%20Pics/PAPER.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -654,7 +654,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -663,7 +663,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624630567/FYP/balaji-srinivasan-ehVdqYCnyRw-unsplash_jbudb7.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279050/FYP%20Pics/PLASTIC.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -679,19 +679,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*9 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Consultancy">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629652/FYP/consultant_m0fat8.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279053/FYP%20Pics/CONSULTANCY.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -702,12 +702,12 @@ const AllCategories = () => {
                   backgroundColor: "rgba(0, 0, 0, 0.6)",
                 }}
               >
-                Consultancy 
+                Consultancy
               </div>
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -716,7 +716,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628988/FYP/printing_mrabcy.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279063/FYP%20Pics/PRINTING.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -732,7 +732,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -741,7 +741,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624628990/FYP/chemicals_fubwm9.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279052/FYP%20Pics/CHEMICALS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -757,19 +757,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*10 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Furniture">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629070/FYP/furniture_jjvcnf.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279054/FYP%20Pics/FRUNITURE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -785,7 +785,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -794,7 +794,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629318/FYP/retail_lyf7sz.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279063/FYP%20Pics/RETAIL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -810,7 +810,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -819,7 +819,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629319/FYP/real_estate_f03sse.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279062/FYP%20Pics/REAL%20ESTATE.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -835,7 +835,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -843,12 +843,12 @@ const AllCategories = () => {
 
       {      /*11 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Laboratory Equipments and Services">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629315/FYP/lab_equipment_o1ybmd.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279058/FYP%20Pics/LABOROTRY.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -864,7 +864,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -873,7 +873,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629654/FYP/sports_h1hnf8.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279064/FYP%20Pics/Sports.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -889,7 +889,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -898,7 +898,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629972/FYP/water_rq2fhy.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279065/FYP%20Pics/Water.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -914,7 +914,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -922,12 +922,12 @@ const AllCategories = () => {
 
       {      /*11 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Marine">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629973/FYP/marine_dqv39k.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279064/FYP%20Pics/Marine.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -943,7 +943,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -952,7 +952,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629977/FYP/banking_or1j8k.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279053/FYP%20Pics/BANKING.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -968,7 +968,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -977,7 +977,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624629975/FYP/HR_hi0tan.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/HR.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -993,19 +993,19 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
       </div>
       {      /*12 row*/}
       <div className='row mb-5'>
-      <div className="col-md-4">
+        <div className="col-md-4">
           <a className="stretched-link" href="/category/Travel and Tourism">
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624630174/FYP/travel_ti9iqx.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279066/FYP%20Pics/Travel.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -1021,7 +1021,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -1030,7 +1030,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624630174/FYP/entertainment_qxeysv.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279055/FYP%20Pics/ENTERTAINMENT.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -1046,7 +1046,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>
@@ -1055,7 +1055,7 @@ const AllCategories = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624630530/FYP/postal_services_ggcet3.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279063/FYP%20Pics/POSTAL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -1071,7 +1071,7 @@ const AllCategories = () => {
 
 
 
-              
+
             </div>
           </a>
         </div>

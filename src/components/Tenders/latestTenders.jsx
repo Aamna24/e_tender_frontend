@@ -24,47 +24,47 @@ const LatestTenders = () => {
   );
   return (
     <div className="container text-left" style={{ marginTop: "50px" }}>
-      {filter
+      {filter.filter(x => x.availibility === "Active")
         .sort((a, b) => b.id - a.id)
         .slice(0, 3)
         .map((post) => {
           return (
             <div className="card mb-5">
               <div className="card-body">
-                <h4 className="card-title text-center" style={{backgroundColor:"#050F2F",color:"white",paddingTop:"4px",paddingBottom:"4px"}} >Title: {post.title}</h4>
-                <p className="card-text " style={{float:"right", color:"black"}}>Posted By: {post.organization_name}</p>
-                <p className="card-text " style={{color:"black"}}>Sector: {post.category}</p>
-                <p className="card-text" style={{color:"black"}}>Description: {post.description}</p>
-                <p className="card-text" style={{color:"black"}}>Region: {post.region}</p>
+                <h4 className="card-title text-center" style={{ backgroundColor: "#050F2F", color: "white", paddingTop: "4px", paddingBottom: "4px" }} >Title: {post.title}</h4>
+                <p className="card-text " style={{ float: "right", color: "black" }}>Posted By: {post.organization_name}</p>
+                <p className="card-text " style={{ color: "black" }}>Sector: {post.category}</p>
+                <p className="card-text" style={{ color: "black" }}>Description: {post.description}</p>
+                <p className="card-text" style={{ color: "black" }}>Region: {post.region}</p>
 
                 <div className="row" >
                   <div className="col-md-6">
-                  <p style={{color:"red", fontWeight:"bold",fontSize:"20px"}} >
-                  {" "}
-                  Bidding ends in: <Countdown date={post.last_date} />
-                </p>
-                    </div>
+                    <p style={{ color: "red", fontWeight: "bold", fontSize: "20px" }} >
+                      {" "}
+                      Bidding ends in: <Countdown date={post.last_date} />
+                    </p>
+                  </div>
                   <div className="col">
-                  <Button
-                  id="btns"
-                  style={{float:"right"}}
-                  onClick={(e) => {
-                    window.location.href = "/details/" + post.id;
-                  }}
-                >
-                  View Details
-                </Button>
-                    </div>
-               
-            
-               
+                    <Button
+                      id="btns"
+                      style={{ float: "right" }}
+                      onClick={(e) => {
+                        window.location.href = "/details/" + post.id;
+                      }}
+                    >
+                      View Details
+                    </Button>
+                  </div>
+
+
+
                 </div>
               </div>
             </div>
           );
         })}
       <div className="text-center">
-        <Button href="/tenders"><VisibilityIcon className='mr-1'/>View More</Button>
+        <Button href="/tenders"><VisibilityIcon className='mr-1' />View More</Button>
       </div>
     </div>
   );

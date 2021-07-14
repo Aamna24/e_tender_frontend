@@ -18,7 +18,6 @@ const MybidDetails = ({ match }) => {
       });
     return details;
   };
-  //getData();
   React.useEffect(getData, [details]);
 
   if (!details || details.length === 0) return <p>Cannot find any Bids</p>;
@@ -70,11 +69,11 @@ const MybidDetails = ({ match }) => {
                 <h5 id="d-title">File</h5>
               </div>
               <div className="col-md-6">
-              <a href={product.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
-                  {" "}<GetAppIcon/>
+                <a href={product.file_uploaded} download="My_File.pdf" style={{ color: "#cc3c34", fontFamily: "bold" }}>
+                  {" "}<GetAppIcon />
                   Click here to download Soft Copy{" "}
                 </a>
-           
+
               </div>
             </div>
           </div>

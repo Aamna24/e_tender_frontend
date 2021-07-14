@@ -7,41 +7,41 @@ const TenderDetails = ({ match }) => {
   const id = Number(match.params.id);
 
   const [details, setDetails] = useState([]);
- 
+
   useEffect(() => {
-    async function getTenders(){
+    async function getTenders() {
       auth
-      .getTenders()
-      .then((res) => {
-        setDetails(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .getTenders()
+        .then((res) => {
+          setDetails(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
     getTenders()
   }, [])
 
   const [bids, setBids] = useState([]);
-  
+
 
   useEffect(() => {
-    async function getBidsData(){
+    async function getBidsData() {
       auth
-      .getBids()
-      .then((res) => {
-        setBids(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .getBids()
+        .then((res) => {
+          setBids(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
     getBidsData();
   }, [])
 
   if (!details || details.length === 0) return <p>Cannot find any tenders</p>;
-  if(!bids || bids.length===0) console.log('no bids')
-  const totalbids = bids.filter(x=>x.tenderId===id && x.postedBy===localStorage.getItem('organization') )
+  if (!bids || bids.length === 0) console.log('no bids')
+  const totalbids = bids.filter(x => x.tenderId === id && x.postedBy === localStorage.getItem('organization'))
   return (
     <div className="container" style={{ marginTop: "50px" }}>
       {details
@@ -125,52 +125,52 @@ const TenderDetails = ({ match }) => {
               <div className="col-md-6">
                 <p>{product.description}</p>
               </div>
-              <a href={product.file_uploaded} download="My_File.pdf" style={{color:"#cc3c34", fontFamily:"bold"}}>
-                  {" "}<GetAppIcon/>
-                  Click here to download Soft Copy{" "}
-                </a>
+              <a href={product.file_uploaded} download="My_File.pdf" style={{ color: "#cc3c34", fontFamily: "bold" }}>
+                {" "}<GetAppIcon />
+                Click here to download Soft Copy{" "}
+              </a>
             </div>
-           <div style={{textAlign:'end'}} className='mb-5'>
-           {!(auth.getCurrentUser() === product.organization_name) && totalbids.length===0 && auth.getCurrentUser() && (
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={(e) => {
-                  window.location.href =
-                    "/place-bid/" + product.id + "/" + product.title;
-                }}
-                style={{backgroundColor:'#cc3c34' }}
-                
-              >
-                Place Bid
-              </Button>
-            )}
-            
-             </div>
-          { totalbids.length!==0 && (
-            <p style={{color:"#cc3c34",  fontSize:"20px",fontWeight:"700"}}> Bid Already Placed</p>
-          )
-          }
-          <div style={{textAlign:'end'}} className='mb-5'>
-          {!auth.getCurrentUser() && (
-             <Button
-             
-             variant="contained"
-             color="primary"
-             
-             onClick={(e) => {
-               window.location.href =
-                 "/login" 
-             }}
-             style={{backgroundColor:'#cc3c34' }}
+            <div style={{ textAlign: 'end' }} className='mb-5'>
+              {!(auth.getCurrentUser() === product.organization_name) && totalbids.length === 0 && auth.getCurrentUser() && (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={(e) => {
+                    window.location.href =
+                      "/place-bid/" + product.id + "/" + product.title;
+                  }}
+                  style={{ backgroundColor: '#cc3c34' }}
 
-             
-           >
-             Place Bid
-           </Button>
-          )}
+                >
+                  Place Bid
+                </Button>
+              )}
+
             </div>
-           
+            {totalbids.length !== 0 && (
+              <p style={{ color: "#cc3c34", fontSize: "20px", fontWeight: "700" }}> Bid Already Placed</p>
+            )
+            }
+            <div style={{ textAlign: 'end' }} className='mb-5'>
+              {!auth.getCurrentUser() && (
+                <Button
+
+                  variant="contained"
+                  color="primary"
+
+                  onClick={(e) => {
+                    window.location.href =
+                      "/login"
+                  }}
+                  style={{ backgroundColor: '#cc3c34' }}
+
+
+                >
+                  Place Bid
+                </Button>
+              )}
+            </div>
+
           </div>
         ))}
     </div>
