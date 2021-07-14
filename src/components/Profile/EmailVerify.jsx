@@ -40,6 +40,7 @@ const EmailVerify = () => {
             variant="contained"
             component={Link}
             to="/login"
+            style={{ backgroundColor: '#cc3c34', color:"white" }}
           >
             Click here to Login
           </Button>
