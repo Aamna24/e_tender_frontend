@@ -11,7 +11,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625045/FYP/doctor-with-stethoscope-hands-hospital-background_cdexs9.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279056/FYP%20Pics/MEDICAL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -37,7 +37,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625252/FYP/construction-silhouette_eui0mi.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/CONSTRUCTION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -58,7 +58,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625802/FYP/93472_uj4gzx.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279047/FYP%20Pics/IT.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -81,7 +81,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625867/FYP/12012_ftcbda.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279059/FYP%20Pics/OIL%20AND%20GAS.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -101,7 +101,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624625954/FYP/high-voltage-post-high-voltage-tower_uxzt2s.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279057/FYP%20Pics/ELECTRICAL.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
@@ -121,7 +121,7 @@ const Categoriescards = () => {
             <div className="card img-fluid" style={{ width: "300px" }}>
               <img
                 className="card-img-top"
-                src="https://res.cloudinary.com/dkenaghia/image/upload/v1624626060/FYP/23175_bnnk5e.jpg"
+                src="https://res.cloudinary.com/dkenaghia/image/upload/v1626279047/FYP%20Pics/TELLECOMMUNIATION.jpg"
                 alt="Card "
                 style={{ width: "100%" }}
               />
