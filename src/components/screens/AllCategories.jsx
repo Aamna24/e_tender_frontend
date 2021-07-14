@@ -72,7 +72,6 @@ const AllCategories = () => {
           </a>
         </div>
       </div>
-      {/*secong row */}
 
       <div className="row mb-5">
         <div className="col-md-4">
@@ -136,7 +135,6 @@ const AllCategories = () => {
           </a>
         </div>
       </div>
-      {      /*third row*/}
       <div className='row mb-5'>
         <div className="col-md-4">
           <a className="stretched-link" href="/category/Agriculture, Food and Beverages">
