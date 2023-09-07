@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# E-Tender 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created using React. 
+
+Features:
+- User can search for available tenders
+- Different tender categories
+- User can login and signup in order to publish tender
+- User can view latest Tender
+- User can place bid on tender
 
 ## Available Scripts
 
